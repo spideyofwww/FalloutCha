@@ -75,7 +75,7 @@ namespace FalloutCha
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 pathName = saveFileDialog.FileName;
-            } 
+            }
             else
             {
                 //MessageBox.Show("помилка", "фаіл не створено", MessageBoxButtons.OK, MessageBoxIcon.Error);
