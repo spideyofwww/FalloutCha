@@ -66,40 +66,37 @@ namespace FalloutCha
 
             //Зберігаємо у json
             string pathName;
-            byte[] info = new UTF8Encoding(true).GetBytes(Newtonsoft.Json.JsonConvert.SerializeObject(MainCh));
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.InitialDirectory = @"C:\";
-            saveFileDialog1.Title = "Save text Files";
-            saveFileDialog1.CheckFileExists = true;
-            saveFileDialog1.CheckPathExists = true;
-            saveFileDialog1.DefaultExt = "txt";
-            saveFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Зберігти Персонажа";
+            saveFileDialog.CheckPathExists = true;
+            saveFileDialog.DefaultExt = MainCh.Name + ".json";
+            saveFileDialog.FileName = "json";
+            saveFileDialog.FilterIndex = 2;
+            saveFileDialog.RestoreDirectory = true;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                pathName = saveFileDialog1.FileName;
-                MessageBox.Show("Фаіл створено\n Test: " + saveFileDialog1.FileName, "Єпі!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } //else
-              //{
-              //    MessageBox.Show("Помилка", "Фаіл не створено", MessageBoxButtons.OK, MessageBoxIcon.Error);
-              // }
+                pathName = saveFileDialog.FileName;
+            } 
+            else
+            {
+                //MessageBox.Show("помилка", "фаіл не створено", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            // create() creates a file at pathname 
-            //filestream fs = file.create(pathname);
-
-            //fs.write(info, 0, info.length);
-            //// check if myfile.txt file is created at the specified path 
-            //if (file.exists(pathname))
-            //{
-            //    messagebox.show("фаіл створено", "єпі!", messageboxbuttons.ok, messageboxicon.information);
-            //}
-            //else
-            //{
-            //    messagebox.show("помилка", "фаіл не створено", messageboxbuttons.ok, messageboxicon.error);
-            //}
-
-
+            //Створюю файл
+            FileStream fs = File.Create(pathName);
+            byte[] info = new UTF8Encoding(true).GetBytes(Newtonsoft.Json.JsonConvert.SerializeObject(MainCh));
+            fs.Write(info, 0, info.Length);
+            // Перевірка
+            if (File.Exists(pathName))
+            {
+                MessageBox.Show("Фаіл створено", "Єпі!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Помилка", "Фаіл не створено", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            fs.Close();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -153,7 +150,7 @@ namespace FalloutCha
                     MainCh = JsonConvert.DeserializeObject<Character>(File.ReadAllText(FileChooseDilog.FileName));
                     if (MainCh == null)
                     {
-                        MessageBox.Show("Десеріалізація провалена", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Некоректний файл", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -169,7 +166,7 @@ namespace FalloutCha
             }
             else
             {
-                MessageBox.Show("Файл не обрано!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Файл не обрано!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
