@@ -129,7 +129,11 @@ namespace FalloutCha
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (!checkBoxSupplies0.Checked)
+            {
+                checkBoxSupplies1.Checked = false;
+                checkBoxSupplies2.Checked = false;
+            }
         }
 
         private void Loadbutton_Click(object sender, EventArgs e)
@@ -209,6 +213,32 @@ namespace FalloutCha
             numericUpDownCaps.Value = MainCh.Caps;
             numericUpDownFT.Value = MainCh.FT_have;
             numericUpDownFtUpdate.Value = MainCh.FT_Update;
+        }
+
+        private void checkBoxSupplies1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!checkBoxSupplies1.Checked)
+            {
+                checkBoxSupplies1.Checked = false;
+            }
+            else
+            {
+                checkBoxSupplies0.Checked = true;
+            }
+        }
+
+        private void checkBoxSupplies2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxSupplies2.Checked)
+            {
+                checkBoxSupplies0.Checked = true;
+                checkBoxSupplies1.Checked = true;
+            }
+        }
+
+        private void Savebutton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

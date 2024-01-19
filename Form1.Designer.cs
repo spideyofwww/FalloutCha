@@ -289,7 +289,7 @@
             StrenghtStat.Maximum = new decimal(new int[] { 6, 0, 0, 0 });
             StrenghtStat.Minimum = new decimal(new int[] { 4, 0, 0, int.MinValue });
             StrenghtStat.Name = "StrenghtStat";
-            StrenghtStat.Size = new Size(29, 22);
+            StrenghtStat.Size = new Size(39, 22);
             StrenghtStat.TabIndex = 19;
             // 
             // PerceptionStat
@@ -298,7 +298,7 @@
             PerceptionStat.Maximum = new decimal(new int[] { 6, 0, 0, 0 });
             PerceptionStat.Minimum = new decimal(new int[] { 4, 0, 0, int.MinValue });
             PerceptionStat.Name = "PerceptionStat";
-            PerceptionStat.Size = new Size(29, 22);
+            PerceptionStat.Size = new Size(39, 22);
             PerceptionStat.TabIndex = 20;
             // 
             // EnduranceStat
@@ -307,35 +307,35 @@
             EnduranceStat.Maximum = new decimal(new int[] { 6, 0, 0, 0 });
             EnduranceStat.Minimum = new decimal(new int[] { 4, 0, 0, int.MinValue });
             EnduranceStat.Name = "EnduranceStat";
-            EnduranceStat.Size = new Size(29, 22);
+            EnduranceStat.Size = new Size(39, 22);
             EnduranceStat.TabIndex = 21;
             // 
             // CharismaStat
             // 
             CharismaStat.Location = new Point(594, 200);
             CharismaStat.Name = "CharismaStat";
-            CharismaStat.Size = new Size(29, 22);
+            CharismaStat.Size = new Size(39, 22);
             CharismaStat.TabIndex = 22;
             // 
             // IntelligenceStat
             // 
             IntelligenceStat.Location = new Point(645, 200);
             IntelligenceStat.Name = "IntelligenceStat";
-            IntelligenceStat.Size = new Size(29, 22);
+            IntelligenceStat.Size = new Size(39, 22);
             IntelligenceStat.TabIndex = 23;
             // 
             // AgilityStat
             // 
             AgilityStat.Location = new Point(700, 200);
             AgilityStat.Name = "AgilityStat";
-            AgilityStat.Size = new Size(29, 22);
+            AgilityStat.Size = new Size(39, 22);
             AgilityStat.TabIndex = 24;
             // 
             // LuckStat
             // 
             LuckStat.Location = new Point(756, 200);
             LuckStat.Name = "LuckStat";
-            LuckStat.Size = new Size(29, 22);
+            LuckStat.Size = new Size(39, 22);
             LuckStat.TabIndex = 25;
             // 
             // label9
@@ -540,6 +540,7 @@
             // numericUpDownHP
             // 
             numericUpDownHP.Location = new Point(910, 54);
+            numericUpDownHP.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDownHP.Name = "numericUpDownHP";
             numericUpDownHP.Size = new Size(61, 22);
             numericUpDownHP.TabIndex = 48;
@@ -547,6 +548,7 @@
             // numericUpDownHPmax
             // 
             numericUpDownHPmax.Location = new Point(910, 26);
+            numericUpDownHPmax.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDownHPmax.Name = "numericUpDownHPmax";
             numericUpDownHPmax.Size = new Size(61, 22);
             numericUpDownHPmax.TabIndex = 50;
@@ -563,6 +565,7 @@
             // numericUpDownFtUpdate
             // 
             numericUpDownFtUpdate.Location = new Point(978, 123);
+            numericUpDownFtUpdate.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDownFtUpdate.Name = "numericUpDownFtUpdate";
             numericUpDownFtUpdate.Size = new Size(61, 22);
             numericUpDownFtUpdate.TabIndex = 54;
@@ -579,6 +582,7 @@
             // numericUpDownFT
             // 
             numericUpDownFT.Location = new Point(1013, 160);
+            numericUpDownFT.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDownFT.Name = "numericUpDownFT";
             numericUpDownFT.Size = new Size(61, 22);
             numericUpDownFT.TabIndex = 52;
@@ -595,6 +599,7 @@
             // numericUpDownArmor
             // 
             numericUpDownArmor.Location = new Point(910, 82);
+            numericUpDownArmor.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDownArmor.Name = "numericUpDownArmor";
             numericUpDownArmor.Size = new Size(61, 22);
             numericUpDownArmor.TabIndex = 56;
@@ -648,6 +653,7 @@
             // numericUpDownCaps
             // 
             numericUpDownCaps.Location = new Point(1050, 54);
+            numericUpDownCaps.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDownCaps.Name = "numericUpDownCaps";
             numericUpDownCaps.Size = new Size(61, 22);
             numericUpDownCaps.TabIndex = 78;
@@ -665,6 +671,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(1131, 761);
             Controls.Add(numericUpDownCaps);
             Controls.Add(label33);
