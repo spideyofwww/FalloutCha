@@ -69,9 +69,8 @@ namespace FalloutCha
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Çבונ³דעט Ïונסמםאזא";
             saveFileDialog.CheckPathExists = true;
-            saveFileDialog.DefaultExt = MainCh.Name + ".json";
-            saveFileDialog.FileName = "json";
-            saveFileDialog.FilterIndex = 2;
+            saveFileDialog.FileName = MainCh.Name + ".json";
+            saveFileDialog.Filter = "json files (*.json)|*.json|All files (*.*)|*.*";
             saveFileDialog.RestoreDirectory = true;
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -140,6 +139,7 @@ namespace FalloutCha
             OpenFileDialog FileChooseDilog = new OpenFileDialog();
             FileChooseDilog.Title = "Îבונ³עü פאיכ";
             FileChooseDilog.DefaultExt = "json";
+            FileChooseDilog.Filter = "json files (*.json)|*.json|All files (*.*)|*.*";
             if (FileChooseDilog.ShowDialog() == DialogResult.OK)
             {
                 //MessageBox.Show(FileChooseDilog.FileName, "Test", MessageBoxButtons.OK, MessageBoxIcon.Information);
