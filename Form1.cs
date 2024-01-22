@@ -23,13 +23,16 @@ namespace FalloutCha
         private void button1_Click(object sender, EventArgs e)
         {
             //Створюю клас персонажа
+
             Character MainCh = new Character();
             // Опис персонажа 
+
             MainCh.Name = textBoxName.Text;
             MainCh.Discr = textBoxDiscr.Text;
             MainCh.Archetype = comboBoxArchetype.Text;
             MainCh.Race = comboBoxRace.Text;
             // Аспекти
+
             MainCh.aspects["Concept"] = textBoxConception.Text;
             MainCh.aspects["Problems"] = textBoxProblem.Text;
             MainCh.aspects["Purpose"] = textBoxPurpose.Text;
@@ -42,7 +45,7 @@ namespace FalloutCha
             MainCh.attributes["A"] = (int)AgilityStat.Value;
             MainCh.attributes["L"] = (int)LuckStat.Value;
             //Навички
-            //t.skills.Add("Athletics", comboBoxAthletics.Text);
+
             MainCh.skills["Athletics"] = comboBoxAthletics.Text;
             MainCh.skills["Stealth"] = comboBoxStealth.Text;
             MainCh.skills["Shoot"] = comboBoxShoot.Text;
@@ -54,6 +57,7 @@ namespace FalloutCha
             MainCh.skills["Manipulation"] = comboBoxManipulation.Text;
             MainCh.skills["Coercion"] = comboBoxCoercion.Text;
             // ОЗ і інші ресурси
+
             MainCh.Hp_max = (int)numericUpDownHPmax.Value;
             MainCh.Hp = (int)numericUpDownHP.Value;
             MainCh.Armor = (int)numericUpDownArmor.Value;
