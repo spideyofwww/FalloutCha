@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Label labelMaxHP;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Savebutton = new Button();
             Loadbutton = new Button();
