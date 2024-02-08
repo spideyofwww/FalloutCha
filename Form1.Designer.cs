@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Label labelMaxHP;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Savebutton = new Button();
             Loadbutton = new Button();
@@ -77,9 +78,7 @@
             label19 = new Label();
             label20 = new Label();
             numericUpDownHP = new NumericUpDown();
-            numericUpDownHPmax = new NumericUpDown();
             label21 = new Label();
-            numericUpDownFtUpdate = new NumericUpDown();
             label22 = new Label();
             numericUpDownFT = new NumericUpDown();
             label23 = new Label();
@@ -92,9 +91,15 @@
             numericUpDownCaps = new NumericUpDown();
             label33 = new Label();
             panel1 = new Panel();
+            labelFtUpdat = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            textBox1 = new TextBox();
             panel2 = new Panel();
             panel3 = new Panel();
+            splitContainer1 = new SplitContainer();
+            comboBox1 = new ComboBox();
             pictureBox2 = new PictureBox();
+            labelMaxHP = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StrenghtStat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PerceptionStat).BeginInit();
@@ -104,16 +109,26 @@
             ((System.ComponentModel.ISupportInitialize)AgilityStat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LuckStat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownHP).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownHPmax).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownFtUpdate).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownFT).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownArmor).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCaps).BeginInit();
             panel1.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
+            // 
+            // labelMaxHP
+            // 
+            labelMaxHP.AutoSize = true;
+            labelMaxHP.Location = new Point(112, 22);
+            labelMaxHP.Name = "labelMaxHP";
+            labelMaxHP.Size = new Size(0, 14);
+            labelMaxHP.TabIndex = 81;
             // 
             // Savebutton
             // 
@@ -178,6 +193,7 @@
             comboBoxArchetype.Size = new Size(121, 22);
             comboBoxArchetype.TabIndex = 6;
             comboBoxArchetype.Text = "Оберіть...";
+            comboBoxArchetype.SelectedIndexChanged += comboBoxArchetype_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -305,6 +321,7 @@
             EnduranceStat.Name = "EnduranceStat";
             EnduranceStat.Size = new Size(39, 22);
             EnduranceStat.TabIndex = 21;
+            EnduranceStat.ValueChanged += EnduranceStat_ValueChanged;
             // 
             // CharismaStat
             // 
@@ -333,6 +350,7 @@
             LuckStat.Name = "LuckStat";
             LuckStat.Size = new Size(39, 22);
             LuckStat.TabIndex = 25;
+            LuckStat.ValueChanged += LuckStat_ValueChanged;
             // 
             // label9
             // 
@@ -541,14 +559,6 @@
             numericUpDownHP.Size = new Size(61, 22);
             numericUpDownHP.TabIndex = 48;
             // 
-            // numericUpDownHPmax
-            // 
-            numericUpDownHPmax.Location = new Point(112, 20);
-            numericUpDownHPmax.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
-            numericUpDownHPmax.Name = "numericUpDownHPmax";
-            numericUpDownHPmax.Size = new Size(61, 22);
-            numericUpDownHPmax.TabIndex = 50;
-            // 
             // label21
             // 
             label21.AutoSize = true;
@@ -557,14 +567,6 @@
             label21.Size = new Size(82, 14);
             label21.TabIndex = 49;
             label21.Text = "Максимум ОЗ";
-            // 
-            // numericUpDownFtUpdate
-            // 
-            numericUpDownFtUpdate.Location = new Point(180, 117);
-            numericUpDownFtUpdate.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
-            numericUpDownFtUpdate.Name = "numericUpDownFtUpdate";
-            numericUpDownFtUpdate.Size = new Size(61, 22);
-            numericUpDownFtUpdate.TabIndex = 54;
             // 
             // label22
             // 
@@ -665,6 +667,9 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(labelMaxHP);
+            panel1.Controls.Add(labelFtUpdat);
+            panel1.Controls.Add(tableLayoutPanel1);
             panel1.Controls.Add(label23);
             panel1.Controls.Add(numericUpDownCaps);
             panel1.Controls.Add(label20);
@@ -673,19 +678,51 @@
             panel1.Controls.Add(checkBoxSupplies2);
             panel1.Controls.Add(label21);
             panel1.Controls.Add(checkBoxSupplies1);
-            panel1.Controls.Add(numericUpDownHPmax);
             panel1.Controls.Add(checkBoxSupplies0);
             panel1.Controls.Add(numericUpDownFT);
             panel1.Controls.Add(label32);
             panel1.Controls.Add(label22);
             panel1.Controls.Add(numericUpDownArmor);
-            panel1.Controls.Add(numericUpDownFtUpdate);
             panel1.Controls.Add(label24);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(808, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(323, 761);
             panel1.TabIndex = 79;
+            // 
+            // labelFtUpdat
+            // 
+            labelFtUpdat.AutoSize = true;
+            labelFtUpdat.Location = new Point(215, 119);
+            labelFtUpdat.Name = "labelFtUpdat";
+            labelFtUpdat.Size = new Size(14, 14);
+            labelFtUpdat.TabIndex = 80;
+            labelFtUpdat.Text = "0";
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.Controls.Add(textBox1, 0, 0);
+            tableLayoutPanel1.Location = new Point(24, 196);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.Size = new Size(268, 128);
+            tableLayoutPanel1.TabIndex = 79;
+            // 
+            // textBox1
+            // 
+            textBox1.Dock = DockStyle.Fill;
+            textBox1.Location = new Point(3, 3);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(83, 36);
+            textBox1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -715,6 +752,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(splitContainer1);
             panel3.Controls.Add(pictureBox2);
             panel3.Controls.Add(comboBoxCoercion);
             panel3.Controls.Add(IntelligenceStat);
@@ -750,6 +788,27 @@
             panel3.Size = new Size(425, 761);
             panel3.TabIndex = 81;
             // 
+            // splitContainer1
+            // 
+            splitContainer1.Location = new Point(20, 457);
+            splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.Controls.Add(comboBox1);
+            splitContainer1.Size = new Size(399, 28);
+            splitContainer1.SplitterDistance = 133;
+            splitContainer1.TabIndex = 47;
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.None;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(4, 3);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(127, 22);
+            comboBox1.TabIndex = 0;
+            // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
@@ -783,17 +842,20 @@
             ((System.ComponentModel.ISupportInitialize)AgilityStat).EndInit();
             ((System.ComponentModel.ISupportInitialize)LuckStat).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownHP).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownHPmax).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownFtUpdate).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownFT).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownArmor).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCaps).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            splitContainer1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
@@ -848,9 +910,7 @@
         private Label label19;
         private Label label20;
         private NumericUpDown numericUpDownHP;
-        private NumericUpDown numericUpDownHPmax;
         private Label label21;
-        private NumericUpDown numericUpDownFtUpdate;
         private Label label22;
         private NumericUpDown numericUpDownFT;
         private Label label23;
@@ -866,5 +926,11 @@
         private Panel panel2;
         private Panel panel3;
         private PictureBox pictureBox2;
+        private SplitContainer splitContainer1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private TextBox textBox1;
+        private Label labelFtUpdat;
+        private ComboBox comboBox1;
+        private Label labelMaxHP;
     }
 }

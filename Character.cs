@@ -8,7 +8,7 @@ using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.IO;
-
+using System.Reflection.Metadata.Ecma335;
 
 namespace FalloutCha
 {
@@ -20,7 +20,7 @@ namespace FalloutCha
         { get; set; }
         public string? Archetype
         { get; set; }
-        public string? Race
+        public string? Race 
         { get; set; }
         public string[][]? Perks
         { get; set; }
@@ -32,18 +32,18 @@ namespace FalloutCha
         { get; set; }
         public int Hp_max
         { get; set; }
-        public int FT_Update
-        { get; set; }
-        public int FT_have
-        { get; set; }
         public int Armor
         { get; set; }
         public int Caps
         { get; set; }
         public bool[] supplies = new bool[3];
-        
 
-        
+
+        public Dictionary<string, int> FT { get; set; } = new Dictionary<string, int>()
+        {
+            {"FT_Update", 0},
+            {"FT_have", 0 }
+        };
 
 
         public Dictionary<string, int> attributes { get; set; } = new Dictionary<string, int>()
@@ -86,7 +86,18 @@ namespace FalloutCha
         };
 
         
-
+        public void FtUpadatecheck()
+        {
+            FT["FT_Update"] = 2 + attributes["L"];
+        }
         
+        public string MaxHPCount()
+        {
+            Hp_max = 15 + attributes["E"] * 3;
+            if(Race == "Супермутант" || Race == "Розумний Пазур Смерті"){
+                Hp_max += 5;
+            }
+            return Convert.ToString(Hp_max);
+        }
     }
 }

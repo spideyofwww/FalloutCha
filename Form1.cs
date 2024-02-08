@@ -1,9 +1,4 @@
 using Newtonsoft.Json;
-using System;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Security.Principal;
 using System.Text;
 
 
@@ -12,6 +7,8 @@ namespace FalloutCha
 
     public partial class Form1 : Form
     {
+        Character MainCh = new Character();
+
         public Form1()
         {
             InitializeComponent();
@@ -19,9 +16,6 @@ namespace FalloutCha
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Створюю клас персонажа
-
-            Character MainCh = new Character();
             // Опис персонажа 
 
             MainCh.Name = textBoxName.Text;
@@ -55,15 +49,15 @@ namespace FalloutCha
             MainCh.skills["Coercion"] = comboBoxCoercion.Text;
             // ОЗ і інші ресурси
 
-            MainCh.Hp_max = (int)numericUpDownHPmax.Value;
+            MainCh.Hp_max = Convert.ToInt32(labelMaxHP.Text);
             MainCh.Hp = (int)numericUpDownHP.Value;
             MainCh.Armor = (int)numericUpDownArmor.Value;
             MainCh.supplies[0] = checkBoxSupplies0.Checked;
             MainCh.supplies[1] = checkBoxSupplies1.Checked;
             MainCh.supplies[2] = checkBoxSupplies2.Checked;
             MainCh.Caps = (int)numericUpDownCaps.Value;
-            MainCh.FT_have = (int)numericUpDownFT.Value;
-            MainCh.FT_Update = (int)numericUpDownFtUpdate.Value;
+            //MainCh.FT_have = (int)numericUpDownFT.Value;
+            //MainCh.FT_Update = (int)numericUpDownFtUpdate.Value;
 
             //Зберігаємо у json
             string pathName;
@@ -116,6 +110,8 @@ namespace FalloutCha
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            MainCh.Race = comboBoxRace.Text;
+            labelMaxHP.Text = MainCh.MaxHPCount();
         }
 
         private void label20_Click(object sender, EventArgs e)
@@ -139,7 +135,6 @@ namespace FalloutCha
 
         private void Loadbutton_Click(object sender, EventArgs e)
         {
-            Character MainCh;
             //string file;
             OpenFileDialog FileChooseDilog = new OpenFileDialog();
             FileChooseDilog.Title = "Оберіть файл";
@@ -205,15 +200,15 @@ namespace FalloutCha
             comboBoxManipulation.Text = MainCh.skills["Manipulation"];
             comboBoxCoercion.Text = MainCh.skills["Coercion"];
             // ОЗ і інші ресурси
-            numericUpDownHPmax.Value = MainCh.Hp_max;
+            labelMaxHP.Text = Convert.ToString(MainCh.Hp_max);
             numericUpDownHP.Value = MainCh.Hp;
             numericUpDownArmor.Value = MainCh.Armor;
             checkBoxSupplies0.Checked = MainCh.supplies[0];
             checkBoxSupplies1.Checked = MainCh.supplies[1];
             checkBoxSupplies2.Checked = MainCh.supplies[2];
             numericUpDownCaps.Value = MainCh.Caps;
-            numericUpDownFT.Value = MainCh.FT_have;
-            numericUpDownFtUpdate.Value = MainCh.FT_Update;
+            numericUpDownFT.Value = MainCh.FT["FT_have"];
+            labelFtUpdat.Text = Convert.ToString(MainCh.FT["FT_Update"]);
         }
 
         private void checkBoxSupplies1_CheckedChanged(object sender, EventArgs e)
@@ -239,7 +234,101 @@ namespace FalloutCha
 
         private void Savebutton_Click(object sender, EventArgs e)
         {
+            //Створюю клас персонажа
+            Character MainCh = new Character();
+            // Опис персонажа 
 
+            MainCh.Name = textBoxName.Text;
+            MainCh.Discr = textBoxDiscr.Text;
+            MainCh.Archetype = comboBoxArchetype.Text;
+            MainCh.Race = comboBoxRace.Text;
+            // Аспекти
+
+            MainCh.aspects["Concept"] = textBoxConception.Text;
+            MainCh.aspects["Problems"] = textBoxProblem.Text;
+            MainCh.aspects["Purpose"] = textBoxPurpose.Text;
+            // Стати SPECIAL
+            MainCh.attributes["S"] = (int)StrenghtStat.Value;
+            MainCh.attributes["P"] = (int)PerceptionStat.Value;
+            MainCh.attributes["E"] = (int)EnduranceStat.Value;
+            MainCh.attributes["C"] = (int)CharismaStat.Value;
+            MainCh.attributes["I"] = (int)IntelligenceStat.Value;
+            MainCh.attributes["A"] = (int)AgilityStat.Value;
+            MainCh.attributes["L"] = (int)LuckStat.Value;
+            //Навички
+
+            MainCh.skills["Athletics"] = comboBoxAthletics.Text;
+            MainCh.skills["Stealth"] = comboBoxStealth.Text;
+            MainCh.skills["Shoot"] = comboBoxShoot.Text;
+            MainCh.skills["Hertz"] = comboBoxHertz.Text;
+            MainCh.skills["Med"] = comboBoxMed.Text;
+            MainCh.skills["Tech"] = comboBoxTech.Text;
+            MainCh.skills["Knowledge"] = comboBoxKnowledge.Text;
+            MainCh.skills["Survive"] = comboBoxSurvive.Text;
+            MainCh.skills["Manipulation"] = comboBoxManipulation.Text;
+            MainCh.skills["Coercion"] = comboBoxCoercion.Text;
+            // ОЗ і інші ресурси
+
+            MainCh.Hp_max = Convert.ToInt32(labelMaxHP.Text);
+            MainCh.Hp = (int)numericUpDownHP.Value;
+            MainCh.Armor = (int)numericUpDownArmor.Value;
+            MainCh.supplies[0] = checkBoxSupplies0.Checked;
+            MainCh.supplies[1] = checkBoxSupplies1.Checked;
+            MainCh.supplies[2] = checkBoxSupplies2.Checked;
+            MainCh.Caps = (int)numericUpDownCaps.Value;
+            MainCh.FT["FT_Update"] = Convert.ToInt32(labelFtUpdat.Text);
+            MainCh.FT["FT_have"] = (int)numericUpDownFT.Value;
+
+            //Зберігаємо у json
+            string pathName;
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Зберігти Персонажа";
+            saveFileDialog.CheckPathExists = true;
+            saveFileDialog.FileName = MainCh.Name + ".json";
+            saveFileDialog.Filter = "json files (*.json)|*.json|All files (*.*)|*.*";
+            saveFileDialog.RestoreDirectory = true;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pathName = saveFileDialog.FileName;
+            }
+            else
+            {
+                //MessageBox.Show("помилка", "фаіл не створено", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //Створюю файл
+            FileStream fs = File.Create(pathName);
+            byte[] info = new UTF8Encoding(true).GetBytes(Newtonsoft.Json.JsonConvert.SerializeObject(MainCh));
+            fs.Write(info, 0, info.Length);
+            // Перевірка
+            if (File.Exists(pathName))
+            {
+                MessageBox.Show("Фаіл створено", "Єпі!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Помилка", "Фаіл не створено", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            fs.Close();
+        }
+
+        private void LuckStat_ValueChanged(object sender, EventArgs e)
+        {
+            MainCh.attributes["L"] = (int)LuckStat.Value;
+            MainCh.FtUpadatecheck();
+            labelFtUpdat.Text = Convert.ToString(MainCh.FT["FT_Update"]);
+        }
+
+        private void comboBoxArchetype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void EnduranceStat_ValueChanged(object sender, EventArgs e)
+        {
+            MainCh.attributes["E"] = (int)EnduranceStat.Value;
+            labelMaxHP.Text = MainCh.MaxHPCount();
         }
     }
 }
