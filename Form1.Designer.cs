@@ -126,8 +126,9 @@
             labelMaxHP.AutoSize = true;
             labelMaxHP.Location = new Point(112, 22);
             labelMaxHP.Name = "labelMaxHP";
-            labelMaxHP.Size = new Size(0, 14);
+            labelMaxHP.Size = new Size(11, 14);
             labelMaxHP.TabIndex = 81;
+            labelMaxHP.Text = " ";
             // 
             // Savebutton
             // 

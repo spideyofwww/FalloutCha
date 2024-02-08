@@ -322,7 +322,7 @@ namespace FalloutCha
 
         private void comboBoxArchetype_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void EnduranceStat_ValueChanged(object sender, EventArgs e)
