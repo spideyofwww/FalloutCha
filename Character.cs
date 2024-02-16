@@ -36,6 +36,8 @@ namespace FalloutCha
         { get; set; }
         public int Caps
         { get; set; }
+        public int StatPoints
+        { get; set; }
         public bool[] supplies = new bool[3];
 
 
@@ -47,6 +49,28 @@ namespace FalloutCha
 
 
         public Dictionary<string, int> attributes { get; set; } = new Dictionary<string, int>()
+        {
+            {"S", 0},
+            {"P", 0},
+            {"E", 0},
+            {"C", 0},
+            {"I", 0},
+            {"A", 0},
+            {"L", 0}
+         };
+
+        public Dictionary<string, int> attributesMax { get; set; } = new Dictionary<string, int>()
+        {
+            {"S", 0},
+            {"P", 0},
+            {"E", 0},
+            {"C", 0},
+            {"I", 0},
+            {"A", 0},
+            {"L", 0}
+         };
+
+        public Dictionary<string, int> attributesMin { get; set; } = new Dictionary<string, int>()
         {
             {"S", 0},
             {"P", 0},
@@ -91,13 +115,104 @@ namespace FalloutCha
             FT["FT_Update"] = 2 + attributes["L"];
         }
         
-        public string MaxHPCount()
+        public void MaxHPCount()
         {
             Hp_max = 15 + attributes["E"] * 3;
             if(Race == "Супермутант" || Race == "Розумний Пазур Смерті"){
                 Hp_max += 5;
             }
-            return Convert.ToString(Hp_max);
+        }
+
+        public void StatMaxMin()
+        {
+            switch(Race)
+            {
+                case "Людина":
+                    attributesMax["S"] = 3;
+                    attributesMax["P"] = 3;
+                    attributesMax["E"] = 3;
+                    attributesMax["C"] = 3;
+                    attributesMax["I"] = 3;
+                    attributesMax["A"] = 3;
+                    attributesMax["L"] = 3;
+
+                    attributesMin["S"] = -1;
+                    attributesMin["P"] = -1;
+                    attributesMin["E"] = -1;
+                    attributesMin["C"] = -1;
+                    attributesMin["I"] = -1;
+                    attributesMin["A"] = -1;
+                    attributesMin["L"] = -1;
+                    break;
+                case "Гуль":
+                    attributesMax["S"] = 2;
+                    attributesMax["P"] = 4;
+                    attributesMax["E"] = 2;
+                    attributesMax["C"] = 2;
+                    attributesMax["I"] = 4;
+                    attributesMax["A"] = 2;
+                    attributesMax["L"] = 4;
+
+                    attributesMin["S"] = -1;
+                    attributesMin["P"] = -1;
+                    attributesMin["E"] = -1;
+                    attributesMin["C"] = -2;
+                    attributesMin["I"] = -1;
+                    attributesMin["A"] = -1;
+                    attributesMin["L"] = -1;
+                    break;
+                case "Супермутант":
+                    attributesMax["S"] = 4;
+                    attributesMax["P"] = 3;
+                    attributesMax["E"] = 4;
+                    attributesMax["C"] = 2;
+                    attributesMax["I"] = 1;
+                    attributesMax["A"] = 3;
+                    attributesMax["L"] = 3;
+
+                    attributesMin["S"] = 0;
+                    attributesMin["P"] = -1;
+                    attributesMin["E"] = 0;
+                    attributesMin["C"] = -2;
+                    attributesMin["I"] = -2;
+                    attributesMin["A"] = -1;
+                    attributesMin["L"] = -1;
+                    break;
+                case "Робот":
+                    attributesMax["S"] = 3;
+                    attributesMax["P"] = 4;
+                    attributesMax["E"] = 3;
+                    attributesMax["C"] = 2;
+                    attributesMax["I"] = 4;
+                    attributesMax["A"] = 2;
+                    attributesMax["L"] = 2;
+
+                    attributesMin["S"] = -1;
+                    attributesMin["P"] = -1;
+                    attributesMin["E"] = -1;
+                    attributesMin["C"] = -1;
+                    attributesMin["I"] = 0;
+                    attributesMin["A"] = -2;
+                    attributesMin["L"] = -1;
+                    break;
+                case "Розумний Пазур Смерті":
+                    attributesMax["S"] = 4;
+                    attributesMax["P"] = 3;
+                    attributesMax["E"] = 4;
+                    attributesMax["C"] = 1;
+                    attributesMax["I"] = 2;
+                    attributesMax["A"] = 4;
+                    attributesMax["L"] = 2;
+
+                    attributesMin["S"] = 0;
+                    attributesMin["P"] = -1;
+                    attributesMin["E"] = -1;
+                    attributesMin["C"] = -2;
+                    attributesMin["I"] = -2;
+                    attributesMin["A"] = 0;
+                    attributesMin["L"] = -1;
+                    break;
+            }
         }
     }
 }

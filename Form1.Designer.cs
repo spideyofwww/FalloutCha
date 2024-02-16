@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Label labelMaxHP;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Savebutton = new Button();
             Loadbutton = new Button();
@@ -95,9 +96,34 @@
             textBox1 = new TextBox();
             panel2 = new Panel();
             panel3 = new Panel();
+            label_Stat_Point_Numbers = new Label();
+            label25 = new Label();
+            label_L_Min = new Label();
+            label_A_Min = new Label();
+            label_I_Min = new Label();
+            label_C_Min = new Label();
+            label_E_Min = new Label();
+            label_P_Min = new Label();
+            label_S_Min = new Label();
+            label_Min_Stat = new Label();
+            label_Current_Stat = new Label();
+            label_L_Max = new Label();
+            label_A_Max = new Label();
+            label_I_Max = new Label();
+            label_C_Max = new Label();
+            label_E_Max = new Label();
+            label_P_Max = new Label();
+            label_S_Max = new Label();
+            label_MAX_Stat = new Label();
+            label_L = new Label();
+            label_A = new Label();
+            label_I = new Label();
+            label_C = new Label();
+            label_E = new Label();
+            label_P = new Label();
+            label_S = new Label();
             splitContainer1 = new SplitContainer();
             comboBox1 = new ComboBox();
-            pictureBox2 = new PictureBox();
             labelMaxHP = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StrenghtStat).BeginInit();
@@ -118,7 +144,6 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // labelMaxHP
@@ -217,7 +242,7 @@
             // comboBoxRace
             // 
             comboBoxRace.FormattingEnabled = true;
-            comboBoxRace.Items.AddRange(new object[] { "Людина", "Гуль", "Супермутант", "Робот", "Розумний Пазур Смерті\r (бан)" });
+            comboBoxRace.Items.AddRange(new object[] { "Людина", "Гуль", "Супермутант", "Робот", "Розумний Пазур Смерті" });
             comboBoxRace.Location = new Point(234, 502);
             comboBoxRace.Name = "comboBoxRace";
             comboBoxRace.Size = new Size(140, 22);
@@ -297,7 +322,7 @@
             // 
             // StrenghtStat
             // 
-            StrenghtStat.Location = new Point(24, 193);
+            StrenghtStat.Location = new Point(47, 70);
             StrenghtStat.Maximum = new decimal(new int[] { 6, 0, 0, 0 });
             StrenghtStat.Minimum = new decimal(new int[] { 4, 0, 0, int.MinValue });
             StrenghtStat.Name = "StrenghtStat";
@@ -306,7 +331,7 @@
             // 
             // PerceptionStat
             // 
-            PerceptionStat.Location = new Point(78, 193);
+            PerceptionStat.Location = new Point(101, 70);
             PerceptionStat.Maximum = new decimal(new int[] { 6, 0, 0, 0 });
             PerceptionStat.Minimum = new decimal(new int[] { 4, 0, 0, int.MinValue });
             PerceptionStat.Name = "PerceptionStat";
@@ -315,7 +340,7 @@
             // 
             // EnduranceStat
             // 
-            EnduranceStat.Location = new Point(134, 193);
+            EnduranceStat.Location = new Point(157, 70);
             EnduranceStat.Maximum = new decimal(new int[] { 6, 0, 0, 0 });
             EnduranceStat.Minimum = new decimal(new int[] { 4, 0, 0, int.MinValue });
             EnduranceStat.Name = "EnduranceStat";
@@ -325,28 +350,28 @@
             // 
             // CharismaStat
             // 
-            CharismaStat.Location = new Point(188, 193);
+            CharismaStat.Location = new Point(211, 70);
             CharismaStat.Name = "CharismaStat";
             CharismaStat.Size = new Size(39, 22);
             CharismaStat.TabIndex = 22;
             // 
             // IntelligenceStat
             // 
-            IntelligenceStat.Location = new Point(246, 193);
+            IntelligenceStat.Location = new Point(269, 70);
             IntelligenceStat.Name = "IntelligenceStat";
             IntelligenceStat.Size = new Size(39, 22);
             IntelligenceStat.TabIndex = 23;
             // 
             // AgilityStat
             // 
-            AgilityStat.Location = new Point(301, 193);
+            AgilityStat.Location = new Point(324, 70);
             AgilityStat.Name = "AgilityStat";
             AgilityStat.Size = new Size(39, 22);
             AgilityStat.TabIndex = 24;
             // 
             // LuckStat
             // 
-            LuckStat.Location = new Point(357, 193);
+            LuckStat.Location = new Point(380, 70);
             LuckStat.Name = "LuckStat";
             LuckStat.Size = new Size(39, 22);
             LuckStat.TabIndex = 25;
@@ -355,7 +380,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(179, 224);
+            label9.Location = new Point(170, 168);
             label9.Name = "label9";
             label9.Size = new Size(54, 14);
             label9.TabIndex = 26;
@@ -364,7 +389,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(20, 246);
+            label10.Location = new Point(11, 190);
             label10.Name = "label10";
             label10.Size = new Size(60, 14);
             label10.TabIndex = 27;
@@ -374,7 +399,7 @@
             // 
             comboBoxAthletics.FormattingEnabled = true;
             comboBoxAthletics.Items.AddRange(new object[] { "Учень (к6)", "Підмайстр (к8)", "Майстра (к10)" });
-            comboBoxAthletics.Location = new Point(91, 243);
+            comboBoxAthletics.Location = new Point(82, 187);
             comboBoxAthletics.Name = "comboBoxAthletics";
             comboBoxAthletics.Size = new Size(121, 22);
             comboBoxAthletics.TabIndex = 28;
@@ -383,7 +408,7 @@
             // 
             comboBoxStealth.FormattingEnabled = true;
             comboBoxStealth.Items.AddRange(new object[] { "Учень (к6)", "Підмайстр (к8)", "Майстра (к10)" });
-            comboBoxStealth.Location = new Point(298, 243);
+            comboBoxStealth.Location = new Point(289, 187);
             comboBoxStealth.Name = "comboBoxStealth";
             comboBoxStealth.Size = new Size(121, 22);
             comboBoxStealth.TabIndex = 30;
@@ -391,7 +416,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(227, 246);
+            label11.Location = new Point(218, 190);
             label11.Name = "label11";
             label11.Size = new Size(46, 14);
             label11.TabIndex = 29;
@@ -401,7 +426,7 @@
             // 
             comboBoxShoot.FormattingEnabled = true;
             comboBoxShoot.Items.AddRange(new object[] { "Учень (к6)", "Підмайстр (к8)", "Майстра (к10)" });
-            comboBoxShoot.Location = new Point(91, 271);
+            comboBoxShoot.Location = new Point(82, 215);
             comboBoxShoot.Name = "comboBoxShoot";
             comboBoxShoot.Size = new Size(121, 22);
             comboBoxShoot.TabIndex = 32;
@@ -409,7 +434,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(20, 274);
+            label12.Location = new Point(11, 218);
             label12.Name = "label12";
             label12.Size = new Size(55, 14);
             label12.TabIndex = 31;
@@ -419,7 +444,7 @@
             // 
             comboBoxHertz.FormattingEnabled = true;
             comboBoxHertz.Items.AddRange(new object[] { "Учень (к6)", "Підмайстр (к8)", "Майстра (к10)" });
-            comboBoxHertz.Location = new Point(298, 274);
+            comboBoxHertz.Location = new Point(289, 218);
             comboBoxHertz.Name = "comboBoxHertz";
             comboBoxHertz.Size = new Size(121, 22);
             comboBoxHertz.TabIndex = 34;
@@ -427,7 +452,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(227, 277);
+            label13.Location = new Point(218, 221);
             label13.Name = "label13";
             label13.Size = new Size(40, 14);
             label13.TabIndex = 33;
@@ -437,7 +462,7 @@
             // 
             comboBoxMed.FormattingEnabled = true;
             comboBoxMed.Items.AddRange(new object[] { "Учень (к6)", "Підмайстр (к8)", "Майстра (к10)" });
-            comboBoxMed.Location = new Point(91, 299);
+            comboBoxMed.Location = new Point(82, 243);
             comboBoxMed.Name = "comboBoxMed";
             comboBoxMed.Size = new Size(121, 22);
             comboBoxMed.TabIndex = 36;
@@ -445,7 +470,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(20, 302);
+            label14.Location = new Point(11, 246);
             label14.Name = "label14";
             label14.Size = new Size(64, 14);
             label14.TabIndex = 35;
@@ -455,7 +480,7 @@
             // 
             comboBoxCoercion.FormattingEnabled = true;
             comboBoxCoercion.Items.AddRange(new object[] { "Учень (к6)", "Підмайстр (к8)", "Майстра (к10)" });
-            comboBoxCoercion.Location = new Point(298, 358);
+            comboBoxCoercion.Location = new Point(289, 302);
             comboBoxCoercion.Name = "comboBoxCoercion";
             comboBoxCoercion.Size = new Size(121, 22);
             comboBoxCoercion.TabIndex = 46;
@@ -463,7 +488,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(227, 361);
+            label15.Location = new Point(218, 305);
             label15.Name = "label15";
             label15.Size = new Size(49, 14);
             label15.TabIndex = 45;
@@ -473,7 +498,7 @@
             // 
             comboBoxManipulation.FormattingEnabled = true;
             comboBoxManipulation.Items.AddRange(new object[] { "Учень (к6)", "Підмайстр (к8)", "Майстра (к10)" });
-            comboBoxManipulation.Location = new Point(91, 355);
+            comboBoxManipulation.Location = new Point(82, 299);
             comboBoxManipulation.Name = "comboBoxManipulation";
             comboBoxManipulation.Size = new Size(121, 22);
             comboBoxManipulation.TabIndex = 44;
@@ -481,7 +506,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(20, 358);
+            label16.Location = new Point(11, 302);
             label16.Name = "label16";
             label16.Size = new Size(74, 14);
             label16.TabIndex = 43;
@@ -491,7 +516,7 @@
             // 
             comboBoxSurvive.FormattingEnabled = true;
             comboBoxSurvive.Items.AddRange(new object[] { "Учень (к6)", "Підмайстр (к8)", "Майстра (к10)" });
-            comboBoxSurvive.Location = new Point(298, 330);
+            comboBoxSurvive.Location = new Point(289, 274);
             comboBoxSurvive.Name = "comboBoxSurvive";
             comboBoxSurvive.Size = new Size(121, 22);
             comboBoxSurvive.TabIndex = 42;
@@ -499,7 +524,7 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(227, 333);
+            label17.Location = new Point(218, 277);
             label17.Name = "label17";
             label17.Size = new Size(71, 14);
             label17.TabIndex = 41;
@@ -509,7 +534,7 @@
             // 
             comboBoxKnowledge.FormattingEnabled = true;
             comboBoxKnowledge.Items.AddRange(new object[] { "Учень (к6)", "Підмайстр (к8)", "Майстра (к10)" });
-            comboBoxKnowledge.Location = new Point(91, 327);
+            comboBoxKnowledge.Location = new Point(82, 271);
             comboBoxKnowledge.Name = "comboBoxKnowledge";
             comboBoxKnowledge.Size = new Size(121, 22);
             comboBoxKnowledge.TabIndex = 40;
@@ -517,7 +542,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(20, 330);
+            label18.Location = new Point(11, 274);
             label18.Name = "label18";
             label18.Size = new Size(47, 14);
             label18.TabIndex = 39;
@@ -527,7 +552,7 @@
             // 
             comboBoxTech.FormattingEnabled = true;
             comboBoxTech.Items.AddRange(new object[] { "Учень (к6)", "Підмайстр (к8)", "Майстра (к10)" });
-            comboBoxTech.Location = new Point(298, 302);
+            comboBoxTech.Location = new Point(289, 246);
             comboBoxTech.Name = "comboBoxTech";
             comboBoxTech.Size = new Size(121, 22);
             comboBoxTech.TabIndex = 38;
@@ -535,7 +560,7 @@
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(227, 305);
+            label19.Location = new Point(218, 249);
             label19.Name = "label19";
             label19.Size = new Size(49, 14);
             label19.TabIndex = 37;
@@ -752,8 +777,33 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(label_Stat_Point_Numbers);
+            panel3.Controls.Add(label25);
+            panel3.Controls.Add(label_L_Min);
+            panel3.Controls.Add(label_A_Min);
+            panel3.Controls.Add(label_I_Min);
+            panel3.Controls.Add(label_C_Min);
+            panel3.Controls.Add(label_E_Min);
+            panel3.Controls.Add(label_P_Min);
+            panel3.Controls.Add(label_S_Min);
+            panel3.Controls.Add(label_Min_Stat);
+            panel3.Controls.Add(label_Current_Stat);
+            panel3.Controls.Add(label_L_Max);
+            panel3.Controls.Add(label_A_Max);
+            panel3.Controls.Add(label_I_Max);
+            panel3.Controls.Add(label_C_Max);
+            panel3.Controls.Add(label_E_Max);
+            panel3.Controls.Add(label_P_Max);
+            panel3.Controls.Add(label_S_Max);
+            panel3.Controls.Add(label_MAX_Stat);
+            panel3.Controls.Add(label_L);
+            panel3.Controls.Add(label_A);
+            panel3.Controls.Add(label_I);
+            panel3.Controls.Add(label_C);
+            panel3.Controls.Add(label_E);
+            panel3.Controls.Add(label_P);
+            panel3.Controls.Add(label_S);
             panel3.Controls.Add(splitContainer1);
-            panel3.Controls.Add(pictureBox2);
             panel3.Controls.Add(comboBoxCoercion);
             panel3.Controls.Add(IntelligenceStat);
             panel3.Controls.Add(AgilityStat);
@@ -788,6 +838,241 @@
             panel3.Size = new Size(425, 761);
             panel3.TabIndex = 81;
             // 
+            // label_Stat_Point_Numbers
+            // 
+            label_Stat_Point_Numbers.AutoSize = true;
+            label_Stat_Point_Numbers.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label_Stat_Point_Numbers.Location = new Point(139, 130);
+            label_Stat_Point_Numbers.Name = "label_Stat_Point_Numbers";
+            label_Stat_Point_Numbers.Size = new Size(21, 24);
+            label_Stat_Point_Numbers.TabIndex = 73;
+            label_Stat_Point_Numbers.Text = "3";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(9, 136);
+            label25.Name = "label25";
+            label25.Size = new Size(124, 14);
+            label25.TabIndex = 72;
+            label25.Text = "Очки для розподілу:";
+            // 
+            // label_L_Min
+            // 
+            label_L_Min.AutoSize = true;
+            label_L_Min.Location = new Point(389, 104);
+            label_L_Min.Name = "label_L_Min";
+            label_L_Min.Size = new Size(14, 14);
+            label_L_Min.TabIndex = 71;
+            label_L_Min.Text = "0";
+            // 
+            // label_A_Min
+            // 
+            label_A_Min.AutoSize = true;
+            label_A_Min.Location = new Point(333, 104);
+            label_A_Min.Name = "label_A_Min";
+            label_A_Min.Size = new Size(14, 14);
+            label_A_Min.TabIndex = 70;
+            label_A_Min.Text = "0";
+            // 
+            // label_I_Min
+            // 
+            label_I_Min.AutoSize = true;
+            label_I_Min.Location = new Point(278, 104);
+            label_I_Min.Name = "label_I_Min";
+            label_I_Min.Size = new Size(14, 14);
+            label_I_Min.TabIndex = 69;
+            label_I_Min.Text = "0";
+            // 
+            // label_C_Min
+            // 
+            label_C_Min.AutoSize = true;
+            label_C_Min.Location = new Point(220, 104);
+            label_C_Min.Name = "label_C_Min";
+            label_C_Min.Size = new Size(14, 14);
+            label_C_Min.TabIndex = 68;
+            label_C_Min.Text = "0";
+            // 
+            // label_E_Min
+            // 
+            label_E_Min.AutoSize = true;
+            label_E_Min.Location = new Point(166, 104);
+            label_E_Min.Name = "label_E_Min";
+            label_E_Min.Size = new Size(14, 14);
+            label_E_Min.TabIndex = 67;
+            label_E_Min.Text = "0";
+            // 
+            // label_P_Min
+            // 
+            label_P_Min.AutoSize = true;
+            label_P_Min.Location = new Point(110, 104);
+            label_P_Min.Name = "label_P_Min";
+            label_P_Min.Size = new Size(14, 14);
+            label_P_Min.TabIndex = 66;
+            label_P_Min.Text = "0";
+            // 
+            // label_S_Min
+            // 
+            label_S_Min.AutoSize = true;
+            label_S_Min.Location = new Point(56, 104);
+            label_S_Min.Name = "label_S_Min";
+            label_S_Min.Size = new Size(14, 14);
+            label_S_Min.TabIndex = 65;
+            label_S_Min.Text = "0";
+            // 
+            // label_Min_Stat
+            // 
+            label_Min_Stat.AutoSize = true;
+            label_Min_Stat.Location = new Point(7, 104);
+            label_Min_Stat.Name = "label_Min_Stat";
+            label_Min_Stat.Size = new Size(28, 14);
+            label_Min_Stat.TabIndex = 64;
+            label_Min_Stat.Text = "MIN";
+            // 
+            // label_Current_Stat
+            // 
+            label_Current_Stat.AutoSize = true;
+            label_Current_Stat.Location = new Point(6, 72);
+            label_Current_Stat.Name = "label_Current_Stat";
+            label_Current_Stat.Size = new Size(32, 14);
+            label_Current_Stat.TabIndex = 63;
+            label_Current_Stat.Text = "Пот.";
+            // 
+            // label_L_Max
+            // 
+            label_L_Max.AutoSize = true;
+            label_L_Max.Location = new Point(389, 46);
+            label_L_Max.Name = "label_L_Max";
+            label_L_Max.Size = new Size(14, 14);
+            label_L_Max.TabIndex = 62;
+            label_L_Max.Text = "0";
+            // 
+            // label_A_Max
+            // 
+            label_A_Max.AutoSize = true;
+            label_A_Max.Location = new Point(333, 46);
+            label_A_Max.Name = "label_A_Max";
+            label_A_Max.Size = new Size(14, 14);
+            label_A_Max.TabIndex = 61;
+            label_A_Max.Text = "0";
+            // 
+            // label_I_Max
+            // 
+            label_I_Max.AutoSize = true;
+            label_I_Max.Location = new Point(278, 46);
+            label_I_Max.Name = "label_I_Max";
+            label_I_Max.Size = new Size(14, 14);
+            label_I_Max.TabIndex = 60;
+            label_I_Max.Text = "0";
+            // 
+            // label_C_Max
+            // 
+            label_C_Max.AutoSize = true;
+            label_C_Max.Location = new Point(220, 46);
+            label_C_Max.Name = "label_C_Max";
+            label_C_Max.Size = new Size(14, 14);
+            label_C_Max.TabIndex = 59;
+            label_C_Max.Text = "0";
+            // 
+            // label_E_Max
+            // 
+            label_E_Max.AutoSize = true;
+            label_E_Max.Location = new Point(166, 46);
+            label_E_Max.Name = "label_E_Max";
+            label_E_Max.Size = new Size(14, 14);
+            label_E_Max.TabIndex = 58;
+            label_E_Max.Text = "0";
+            // 
+            // label_P_Max
+            // 
+            label_P_Max.AutoSize = true;
+            label_P_Max.Location = new Point(110, 46);
+            label_P_Max.Name = "label_P_Max";
+            label_P_Max.Size = new Size(14, 14);
+            label_P_Max.TabIndex = 57;
+            label_P_Max.Text = "0";
+            // 
+            // label_S_Max
+            // 
+            label_S_Max.AutoSize = true;
+            label_S_Max.Location = new Point(56, 46);
+            label_S_Max.Name = "label_S_Max";
+            label_S_Max.Size = new Size(14, 14);
+            label_S_Max.TabIndex = 56;
+            label_S_Max.Text = "0";
+            // 
+            // label_MAX_Stat
+            // 
+            label_MAX_Stat.AutoSize = true;
+            label_MAX_Stat.Location = new Point(6, 48);
+            label_MAX_Stat.Name = "label_MAX_Stat";
+            label_MAX_Stat.Size = new Size(31, 14);
+            label_MAX_Stat.TabIndex = 55;
+            label_MAX_Stat.Text = "MAX";
+            // 
+            // label_L
+            // 
+            label_L.AutoSize = true;
+            label_L.Location = new Point(380, 9);
+            label_L.Name = "label_L";
+            label_L.Size = new Size(30, 14);
+            label_L.TabIndex = 54;
+            label_L.Text = "УДЧ";
+            // 
+            // label_A
+            // 
+            label_A.AutoSize = true;
+            label_A.Location = new Point(324, 9);
+            label_A.Name = "label_A";
+            label_A.Size = new Size(22, 14);
+            label_A.TabIndex = 53;
+            label_A.Text = "ВП";
+            // 
+            // label_I
+            // 
+            label_I.AutoSize = true;
+            label_I.Location = new Point(269, 9);
+            label_I.Name = "label_I";
+            label_I.Size = new Size(19, 14);
+            label_I.TabIndex = 52;
+            label_I.Text = "ІН";
+            // 
+            // label_C
+            // 
+            label_C.AutoSize = true;
+            label_C.Location = new Point(211, 9);
+            label_C.Name = "label_C";
+            label_C.Size = new Size(22, 14);
+            label_C.TabIndex = 51;
+            label_C.Text = "ПВ";
+            // 
+            // label_E
+            // 
+            label_E.AutoSize = true;
+            label_E.Location = new Point(157, 9);
+            label_E.Name = "label_E";
+            label_E.Size = new Size(29, 14);
+            label_E.TabIndex = 50;
+            label_E.Text = "ВТР";
+            // 
+            // label_P
+            // 
+            label_P.AutoSize = true;
+            label_P.Location = new Point(101, 9);
+            label_P.Name = "label_P";
+            label_P.Size = new Size(29, 14);
+            label_P.TabIndex = 49;
+            label_P.Text = "СПР";
+            // 
+            // label_S
+            // 
+            label_S.AutoSize = true;
+            label_S.Location = new Point(47, 9);
+            label_S.Name = "label_S";
+            label_S.Size = new Size(30, 14);
+            label_S.TabIndex = 48;
+            label_S.Text = "СИЛ";
+            // 
             // splitContainer1
             // 
             splitContainer1.Location = new Point(20, 457);
@@ -808,16 +1093,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(127, 22);
             comboBox1.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(6, 5);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(397, 182);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 18;
-            pictureBox2.TabStop = false;
             // 
             // Form1
             // 
@@ -856,7 +1131,6 @@
             splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -925,12 +1199,37 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private PictureBox pictureBox2;
         private SplitContainer splitContainer1;
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox textBox1;
         private Label labelFtUpdat;
         private ComboBox comboBox1;
         private Label labelMaxHP;
+        private Label label_S;
+        private Label label_I;
+        private Label label_C;
+        private Label label_E;
+        private Label label_P;
+        private Label label_A_Max;
+        private Label label_I_Max;
+        private Label label_C_Max;
+        private Label label_E_Max;
+        private Label label_P_Max;
+        private Label label_S_Max;
+        private Label label_MAX_Stat;
+        private Label label_L;
+        private Label label_A;
+        private Label label_Current_Stat;
+        private Label label_L_Max;
+        private Label label_L_Min;
+        private Label label_A_Min;
+        private Label label_I_Min;
+        private Label label_C_Min;
+        private Label label_E_Min;
+        private Label label_P_Min;
+        private Label label_S_Min;
+        private Label label_Min_Stat;
+        private Label label_Stat_Point_Numbers;
+        private Label label25;
     }
 }

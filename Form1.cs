@@ -8,7 +8,8 @@ namespace FalloutCha
     public partial class Form1 : Form
     {
         Character MainCh = new Character();
-
+        char[] stats = { 'S', 'P', 'E', 'C', 'I', 'A', 'L' };
+        
         public Form1()
         {
             InitializeComponent();
@@ -111,7 +112,38 @@ namespace FalloutCha
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             MainCh.Race = comboBoxRace.Text;
-            labelMaxHP.Text = MainCh.MaxHPCount();
+            MainCh.MaxHPCount();
+            numericUpDownHP.Maximum = MainCh.Hp_max;
+            MainCh.StatMaxMin();
+
+            label_S_Max.Text = Convert.ToString(MainCh.attributesMax["S"]) ;
+            label_S_Min.Text = Convert.ToString(MainCh.attributesMin["S"]);
+            StrenghtStat.Maximum = MainCh.attributesMax["S"];
+            StrenghtStat.Minimum = MainCh.attributesMin["S"];
+            label_P_Max.Text = Convert.ToString(MainCh.attributesMax["P"]);
+            label_P_Min.Text = Convert.ToString(MainCh.attributesMin["P"]);
+            PerceptionStat.Maximum = MainCh.attributesMax["P"];
+            PerceptionStat.Minimum = MainCh.attributesMin["P"];
+            label_E_Max.Text = Convert.ToString(MainCh.attributesMax["E"]);
+            label_E_Min.Text = Convert.ToString(MainCh.attributesMin["E"]);
+            EnduranceStat.Maximum = MainCh.attributesMax["E"];
+            EnduranceStat.Minimum = MainCh.attributesMin["E"];
+            label_C_Max.Text = Convert.ToString(MainCh.attributesMax["C"]);
+            label_C_Min.Text = Convert.ToString(MainCh.attributesMin["C"]);
+            CharismaStat.Maximum = MainCh.attributesMax["C"];
+            CharismaStat.Minimum = MainCh.attributesMin["C"];
+            label_I_Max.Text = Convert.ToString(MainCh.attributesMax["I"]);
+            label_I_Min.Text = Convert.ToString(MainCh.attributesMin["I"]);
+            IntelligenceStat.Maximum = MainCh.attributesMax["I"];
+            IntelligenceStat.Minimum = MainCh.attributesMin["I"];
+            label_A_Max.Text = Convert.ToString(MainCh.attributesMax["A"]);
+            label_A_Min.Text = Convert.ToString(MainCh.attributesMin["A"]);
+            AgilityStat.Maximum = MainCh.attributesMax["A"];
+            AgilityStat.Minimum = MainCh.attributesMin["A"];
+            label_L_Max.Text = Convert.ToString(MainCh.attributesMax["L"]);
+            label_L_Min.Text = Convert.ToString(MainCh.attributesMin["L"]);
+            LuckStat.Maximum = MainCh.attributesMax["L"];
+            LuckStat.Minimum = MainCh.attributesMin["L"];
         }
 
         private void label20_Click(object sender, EventArgs e)
@@ -318,6 +350,7 @@ namespace FalloutCha
             MainCh.attributes["L"] = (int)LuckStat.Value;
             MainCh.FtUpadatecheck();
             labelFtUpdat.Text = Convert.ToString(MainCh.FT["FT_Update"]);
+            numericUpDownFT.Maximum = MainCh.FT["FT_Update"];
         }
 
         private void comboBoxArchetype_SelectedIndexChanged(object sender, EventArgs e)
@@ -328,7 +361,9 @@ namespace FalloutCha
         private void EnduranceStat_ValueChanged(object sender, EventArgs e)
         {
             MainCh.attributes["E"] = (int)EnduranceStat.Value;
-            labelMaxHP.Text = MainCh.MaxHPCount();
+            MainCh.MaxHPCount();
+            numericUpDownHP.Maximum = MainCh.Hp_max;
+            labelMaxHP.Text = Convert.ToString(MainCh.Hp_max);
         }
     }
 }
