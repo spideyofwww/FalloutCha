@@ -28,27 +28,26 @@ namespace FalloutCha
         { get; set; }
         public string[]? Weapons
         { get; set; }
-        public int Hp
+        public ushort Hp
         { get; set; }
-        public int Hp_max
+        public ushort Hp_max 
         { get; set; }
-        public int Armor
+        public ushort Armor
         { get; set; }
-        public int Caps
+        public ushort Caps
         { get; set; }
-        public int StatPoints
-        { get; set; }
-        public bool[] supplies = new bool[3];
+        public byte StatPoints { get; set; } = 3;
+        public bool[] supplies { get; set; } = new bool[3];
 
 
-        public Dictionary<string, int> FT { get; set; } = new Dictionary<string, int>()
+        public Dictionary<string, ushort> FT { get; set; } = new Dictionary<string, ushort>()
         {
             {"FT_Update", 0},
             {"FT_have", 0 }
         };
 
 
-        public Dictionary<string, int> attributes { get; set; } = new Dictionary<string, int>()
+        public Dictionary<string, short> attributes { get; set; } = new Dictionary<string, short>()
         {
             {"S", 0},
             {"P", 0},
@@ -59,7 +58,7 @@ namespace FalloutCha
             {"L", 0}
          };
 
-        public Dictionary<string, int> attributesMax { get; set; } = new Dictionary<string, int>()
+        public Dictionary<string, short> attributesMax { get; set; } = new Dictionary<string, short>()
         {
             {"S", 0},
             {"P", 0},
@@ -70,7 +69,7 @@ namespace FalloutCha
             {"L", 0}
          };
 
-        public Dictionary<string, int> attributesMin { get; set; } = new Dictionary<string, int>()
+        public Dictionary<string, short> attributesMin { get; set; } = new Dictionary<string, short>()
         {
             {"S", 0},
             {"P", 0},
@@ -112,12 +111,13 @@ namespace FalloutCha
         
         public void FtUpadatecheck()
         {
-            FT["FT_Update"] = 2 + attributes["L"];
+            FT["FT_Update"] = (ushort)(2 + attributes["L"]);
         }
         
         public void MaxHPCount()
         {
-            Hp_max = 15 + attributes["E"] * 3;
+            Hp_max = 15;
+            Hp_max += (ushort)(attributes["E"] * 3);
             if(Race == "Супермутант" || Race == "Розумний Пазур Смерті"){
                 Hp_max += 5;
             }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Label labelMaxHP;
+            //Label labelMaxHP;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Savebutton = new Button();
             Loadbutton = new Button();
@@ -328,6 +328,7 @@
             StrenghtStat.Name = "StrenghtStat";
             StrenghtStat.Size = new Size(39, 22);
             StrenghtStat.TabIndex = 19;
+            StrenghtStat.ValueChanged += StrenghtStat_ValueChanged;
             // 
             // PerceptionStat
             // 
