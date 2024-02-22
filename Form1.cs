@@ -9,10 +9,16 @@ namespace FalloutCha
     {
         Character MainCh = new Character();
         string[] stats = { "S", "P", "E", "C", "I", "A", "L" };
-
         public Form1()
         {
             InitializeComponent();
+            StrenghtStat.Controls[0].Visible = false;
+            PerceptionStat.Controls[0].Visible = false;
+            EnduranceStat.Controls[0].Visible = false;
+            CharismaStat.Controls[0].Visible = false;
+            IntelligenceStat.Controls[0].Visible = false;
+            AgilityStat.Controls[0].Visible = false;
+            LuckStat.Controls[0].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -159,6 +165,17 @@ namespace FalloutCha
             LuckStat.Maximum = MainCh.attributesMax["L"];
             LuckStat.Minimum = MainCh.attributesMin["L"];
             LuckStat.Value = MainCh.attributes["L"];
+
+            if(MainCh.Race != null)
+            {
+                StrenghtStat.Controls[0].Visible = true;
+                PerceptionStat.Controls[0].Visible = true;
+                EnduranceStat.Controls[0].Visible = true;
+                CharismaStat.Controls[0].Visible = true;
+                IntelligenceStat.Controls[0].Visible = true;
+                AgilityStat.Controls[0].Visible = true;
+                LuckStat.Controls[0].Visible = true;
+            }
         }
 
         private void label20_Click(object sender, EventArgs e)
@@ -383,43 +400,19 @@ namespace FalloutCha
 
         private void StrenghtStat_ValueChanged(object sender, EventArgs e)
         {
-            if (MainCh.attributes["S"] < StrenghtStat.Value && MainCh.attributes["S"] != StrenghtStat.Value)
+
+            if (MainCh.StatPoints > 0 && MainCh.attributes["S"] < StrenghtStat.Value)
             {
-                if (StrenghtStat.Value != StrenghtStat.Maximum)
-                {
-                    if (MainCh.StatPoints > 0)
-                    {
-                        MainCh.StatPoints--;
-                        MainCh.attributes["S"] = (byte)StrenghtStat.Value;
-                        label_Stat_Point_Numbers.Text = Convert.ToString(MainCh.StatPoints);
-                    }
-                    else
-                    {
-                        StrenghtStat.Value = MainCh.attributes["S"];
-                    }
-                }
+                MainCh.StatPoints--;
+                MainCh.attributes["S"] = (byte)StrenghtStat.Value;
+                label_Stat_Point_Numbers.Text = Convert.ToString(MainCh.StatPoints);
             }
             else
             {
-                if (StrenghtStat.Value != StrenghtStat.Minimum)
-                {
-                    MainCh.StatPoints++;
-                    MainCh.attributes["S"] = (short)StrenghtStat.Value;
-                    label_Stat_Point_Numbers.Text = Convert.ToString(MainCh.StatPoints);
-                }
+                MainCh.StatPoints++;
+                MainCh.attributes["S"] = (short)StrenghtStat.Value;
+                label_Stat_Point_Numbers.Text = Convert.ToString(MainCh.StatPoints);
             }
-
-            //if(MainCh.StatPoints == 0 || MainCh.attributesMax["S"] == StrenghtStat.Value)
-            //{
-            //    StrenghtStat.Controls[1].Visible = false;
-            //}
-            //else
-            //{
-            //    if (!StrenghtStat.Controls[0].Visible)
-            //    {
-            //        StrenghtStat.Controls[0].Visible = true;
-            //    }
-            //}
         }
     }
 }

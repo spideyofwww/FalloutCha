@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            //Label labelMaxHP;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Savebutton = new Button();
             Loadbutton = new Button();
@@ -123,7 +122,6 @@
             label_P = new Label();
             label_S = new Label();
             splitContainer1 = new SplitContainer();
-            comboBox1 = new ComboBox();
             labelMaxHP = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StrenghtStat).BeginInit();
@@ -142,18 +140,8 @@
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
-            splitContainer1.Panel1.SuspendLayout();
             splitContainer1.SuspendLayout();
             SuspendLayout();
-            // 
-            // labelMaxHP
-            // 
-            labelMaxHP.AutoSize = true;
-            labelMaxHP.Location = new Point(112, 22);
-            labelMaxHP.Name = "labelMaxHP";
-            labelMaxHP.Size = new Size(11, 14);
-            labelMaxHP.TabIndex = 81;
-            labelMaxHP.Text = " ";
             // 
             // Savebutton
             // 
@@ -716,6 +704,15 @@
             panel1.Size = new Size(323, 761);
             panel1.TabIndex = 79;
             // 
+            // labelMaxHP
+            // 
+            labelMaxHP.AutoSize = true;
+            labelMaxHP.Location = new Point(112, 22);
+            labelMaxHP.Name = "labelMaxHP";
+            labelMaxHP.Size = new Size(11, 14);
+            labelMaxHP.TabIndex = 81;
+            labelMaxHP.Text = " ";
+            // 
             // labelFtUpdat
             // 
             labelFtUpdat.AutoSize = true;
@@ -1078,22 +1075,9 @@
             // 
             splitContainer1.Location = new Point(20, 457);
             splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            splitContainer1.Panel1.Controls.Add(comboBox1);
             splitContainer1.Size = new Size(399, 28);
             splitContainer1.SplitterDistance = 133;
             splitContainer1.TabIndex = 47;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.None;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(4, 3);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(127, 22);
-            comboBox1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -1129,7 +1113,6 @@
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
@@ -1204,7 +1187,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox textBox1;
         private Label labelFtUpdat;
-        private ComboBox comboBox1;
         private Label labelMaxHP;
         private Label label_S;
         private Label label_I;
