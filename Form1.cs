@@ -9,6 +9,25 @@ namespace FalloutCha
     {
         Character MainCh = new Character();
         string[] stats = { "S", "P", "E", "C", "I", "A", "L" };
+        void GetStat(string StatN, NumericUpDown obj)
+        {
+            if (MainCh.StatPoints > 0 && MainCh.attributes[StatN] < obj.Value)
+            {
+                MainCh.StatPoints--;
+                MainCh.attributes[StatN] = (byte)obj.Value;
+                label_Stat_Point_Numbers.Text = Convert.ToString(MainCh.StatPoints);
+            }
+            else if (MainCh.attributes[StatN] > obj.Value)
+            {
+                MainCh.StatPoints++;
+                MainCh.attributes[StatN] = (short)obj.Value;
+                label_Stat_Point_Numbers.Text = Convert.ToString(MainCh.StatPoints);
+            }
+            else
+            {
+                obj.Value = MainCh.attributes[StatN];
+            }
+        }
         public Form1()
         {
             InitializeComponent();
@@ -166,7 +185,7 @@ namespace FalloutCha
             LuckStat.Minimum = MainCh.attributesMin["L"];
             LuckStat.Value = MainCh.attributes["L"];
 
-            if(MainCh.Race != null)
+            if (MainCh.Race != null)
             {
                 StrenghtStat.Controls[0].Visible = true;
                 PerceptionStat.Controls[0].Visible = true;
@@ -379,7 +398,7 @@ namespace FalloutCha
 
         private void LuckStat_ValueChanged(object sender, EventArgs e)
         {
-            MainCh.attributes["L"] = (short)LuckStat.Value;
+            GetStat("L", LuckStat);
             MainCh.FtUpadatecheck();
             labelFtUpdat.Text = Convert.ToString(MainCh.FT["FT_Update"]);
             numericUpDownFT.Maximum = MainCh.FT["FT_Update"];
@@ -392,7 +411,7 @@ namespace FalloutCha
 
         private void EnduranceStat_ValueChanged(object sender, EventArgs e)
         {
-            MainCh.attributes["E"] = (short)EnduranceStat.Value;
+            GetStat("E", EnduranceStat);
             MainCh.MaxHPCount();
             numericUpDownHP.Maximum = MainCh.Hp_max;
             labelMaxHP.Text = Convert.ToString(MainCh.Hp_max);
@@ -400,19 +419,27 @@ namespace FalloutCha
 
         private void StrenghtStat_ValueChanged(object sender, EventArgs e)
         {
+            GetStat("S", StrenghtStat);
+        }
 
-            if (MainCh.StatPoints > 0 && MainCh.attributes["S"] < StrenghtStat.Value)
-            {
-                MainCh.StatPoints--;
-                MainCh.attributes["S"] = (byte)StrenghtStat.Value;
-                label_Stat_Point_Numbers.Text = Convert.ToString(MainCh.StatPoints);
-            }
-            else
-            {
-                MainCh.StatPoints++;
-                MainCh.attributes["S"] = (short)StrenghtStat.Value;
-                label_Stat_Point_Numbers.Text = Convert.ToString(MainCh.StatPoints);
-            }
+        private void PerceptionStat_ValueChanged(object sender, EventArgs e)
+        {
+            GetStat("P", PerceptionStat);
+        }
+
+        private void CharismaStat_ValueChanged(object sender, EventArgs e)
+        {
+            GetStat("C", CharismaStat);
+        }
+
+        private void IntelligenceStat_ValueChanged(object sender, EventArgs e)
+        {
+            GetStat("I", IntelligenceStat);
+        }
+
+        private void AgilityStat_ValueChanged(object sender, EventArgs e)
+        {
+            GetStat("A", AgilityStat);
         }
     }
 }

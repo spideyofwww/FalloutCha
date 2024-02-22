@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Savebutton = new Button();
             Loadbutton = new Button();
@@ -142,6 +143,15 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.SuspendLayout();
             SuspendLayout();
+            // 
+            // labelMaxHP
+            // 
+            labelMaxHP.AutoSize = true;
+            labelMaxHP.Location = new Point(112, 22);
+            labelMaxHP.Name = "labelMaxHP";
+            labelMaxHP.Size = new Size(11, 14);
+            labelMaxHP.TabIndex = 81;
+            labelMaxHP.Text = " ";
             // 
             // Savebutton
             // 
@@ -326,6 +336,7 @@
             PerceptionStat.Name = "PerceptionStat";
             PerceptionStat.Size = new Size(39, 22);
             PerceptionStat.TabIndex = 20;
+            PerceptionStat.ValueChanged += PerceptionStat_ValueChanged;
             // 
             // EnduranceStat
             // 
@@ -343,6 +354,7 @@
             CharismaStat.Name = "CharismaStat";
             CharismaStat.Size = new Size(39, 22);
             CharismaStat.TabIndex = 22;
+            CharismaStat.ValueChanged += CharismaStat_ValueChanged;
             // 
             // IntelligenceStat
             // 
@@ -350,6 +362,7 @@
             IntelligenceStat.Name = "IntelligenceStat";
             IntelligenceStat.Size = new Size(39, 22);
             IntelligenceStat.TabIndex = 23;
+            IntelligenceStat.ValueChanged += IntelligenceStat_ValueChanged;
             // 
             // AgilityStat
             // 
@@ -357,6 +370,7 @@
             AgilityStat.Name = "AgilityStat";
             AgilityStat.Size = new Size(39, 22);
             AgilityStat.TabIndex = 24;
+            AgilityStat.ValueChanged += AgilityStat_ValueChanged;
             // 
             // LuckStat
             // 
@@ -703,15 +717,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(323, 761);
             panel1.TabIndex = 79;
-            // 
-            // labelMaxHP
-            // 
-            labelMaxHP.AutoSize = true;
-            labelMaxHP.Location = new Point(112, 22);
-            labelMaxHP.Name = "labelMaxHP";
-            labelMaxHP.Size = new Size(11, 14);
-            labelMaxHP.TabIndex = 81;
-            labelMaxHP.Text = " ";
             // 
             // labelFtUpdat
             // 
