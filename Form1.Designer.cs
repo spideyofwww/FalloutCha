@@ -92,8 +92,6 @@
             panel1 = new Panel();
             label_max_hp = new Label();
             labelFtUpdat = new Label();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            textBox1 = new TextBox();
             panel2 = new Panel();
             panel3 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -136,7 +134,6 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDownArmor).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCaps).BeginInit();
             panel1.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -695,7 +692,6 @@
             // 
             panel1.Controls.Add(label_max_hp);
             panel1.Controls.Add(labelFtUpdat);
-            panel1.Controls.Add(tableLayoutPanel1);
             panel1.Controls.Add(label23);
             panel1.Controls.Add(numericUpDownCaps);
             panel1.Controls.Add(label20);
@@ -733,31 +729,6 @@
             labelFtUpdat.Size = new Size(14, 14);
             labelFtUpdat.TabIndex = 80;
             labelFtUpdat.Text = "0";
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 0);
-            tableLayoutPanel1.Location = new Point(24, 196);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new Size(268, 128);
-            tableLayoutPanel1.TabIndex = 79;
-            // 
-            // textBox1
-            // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(3, 3);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(83, 36);
-            textBox1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -1156,8 +1127,6 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDownCaps).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
@@ -1232,8 +1201,6 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private TableLayoutPanel tableLayoutPanel1;
-        private TextBox textBox1;
         private Label labelFtUpdat;
         private Label label_S;
         private Label label_I;
