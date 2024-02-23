@@ -31,6 +31,7 @@ namespace FalloutCha
         public Form1()
         {
             InitializeComponent();
+            numericUpDownHP.Maximum = 15;
             StrenghtStat.Controls[0].Visible = false;
             PerceptionStat.Controls[0].Visible = false;
             EnduranceStat.Controls[0].Visible = false;
@@ -138,7 +139,7 @@ namespace FalloutCha
             MainCh.StatPoints = 3;
             label_Stat_Point_Numbers.Text = "3";
             MainCh.MaxHPCount();
-            numericUpDownHP.Maximum = MainCh.Hp_max;
+            numericUpDownHP.Value = numericUpDownHP.Maximum = MainCh.Hp_max;
             label_max_hp.Text = Convert.ToString(MainCh.Hp_max);
             MainCh.StatMaxMin();
 
@@ -410,8 +411,10 @@ namespace FalloutCha
         private void EnduranceStat_ValueChanged(object sender, EventArgs e)
         {
             GetStat("E", EnduranceStat);
+            ushort t = MainCh.Hp_max;
             MainCh.MaxHPCount();
             numericUpDownHP.Maximum = MainCh.Hp_max;
+            numericUpDownHP.Value += MainCh.Hp_max - t;
             label_max_hp.Text = Convert.ToString(MainCh.Hp_max);
         }
 
