@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Savebutton = new Button();
             Loadbutton = new Button();
@@ -91,39 +90,39 @@
             numericUpDownCaps = new NumericUpDown();
             label33 = new Label();
             panel1 = new Panel();
+            label_max_hp = new Label();
             labelFtUpdat = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             textBox1 = new TextBox();
             panel2 = new Panel();
             panel3 = new Panel();
-            label_Stat_Point_Numbers = new Label();
-            label25 = new Label();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            label_S = new Label();
+            label_P = new Label();
+            label_E = new Label();
             label_L_Min = new Label();
+            label_C = new Label();
             label_A_Min = new Label();
+            label_I = new Label();
             label_I_Min = new Label();
+            label_A = new Label();
             label_C_Min = new Label();
+            label_L = new Label();
             label_E_Min = new Label();
+            label_MAX_Stat = new Label();
             label_P_Min = new Label();
+            label_Current_Stat = new Label();
             label_S_Min = new Label();
             label_Min_Stat = new Label();
-            label_Current_Stat = new Label();
             label_L_Max = new Label();
-            label_A_Max = new Label();
-            label_I_Max = new Label();
-            label_C_Max = new Label();
-            label_E_Max = new Label();
-            label_P_Max = new Label();
             label_S_Max = new Label();
-            label_MAX_Stat = new Label();
-            label_L = new Label();
-            label_A = new Label();
-            label_I = new Label();
-            label_C = new Label();
-            label_E = new Label();
-            label_P = new Label();
-            label_S = new Label();
-            splitContainer1 = new SplitContainer();
-            labelMaxHP = new Label();
+            label_A_Max = new Label();
+            label_P_Max = new Label();
+            label_I_Max = new Label();
+            label_E_Max = new Label();
+            label_C_Max = new Label();
+            label_Stat_Point_Numbers = new Label();
+            label25 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StrenghtStat).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PerceptionStat).BeginInit();
@@ -140,18 +139,8 @@
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
-            splitContainer1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // labelMaxHP
-            // 
-            labelMaxHP.AutoSize = true;
-            labelMaxHP.Location = new Point(112, 22);
-            labelMaxHP.Name = "labelMaxHP";
-            labelMaxHP.Size = new Size(11, 14);
-            labelMaxHP.TabIndex = 81;
-            labelMaxHP.Text = " ";
             // 
             // Savebutton
             // 
@@ -320,7 +309,8 @@
             // 
             // StrenghtStat
             // 
-            StrenghtStat.Location = new Point(47, 70);
+            StrenghtStat.Anchor = AnchorStyles.None;
+            StrenghtStat.Location = new Point(57, 53);
             StrenghtStat.Maximum = new decimal(new int[] { 6, 0, 0, 0 });
             StrenghtStat.Minimum = new decimal(new int[] { 4, 0, 0, int.MinValue });
             StrenghtStat.Name = "StrenghtStat";
@@ -330,7 +320,8 @@
             // 
             // PerceptionStat
             // 
-            PerceptionStat.Location = new Point(101, 70);
+            PerceptionStat.Anchor = AnchorStyles.None;
+            PerceptionStat.Location = new Point(108, 53);
             PerceptionStat.Maximum = new decimal(new int[] { 6, 0, 0, 0 });
             PerceptionStat.Minimum = new decimal(new int[] { 4, 0, 0, int.MinValue });
             PerceptionStat.Name = "PerceptionStat";
@@ -340,7 +331,8 @@
             // 
             // EnduranceStat
             // 
-            EnduranceStat.Location = new Point(157, 70);
+            EnduranceStat.Anchor = AnchorStyles.None;
+            EnduranceStat.Location = new Point(159, 53);
             EnduranceStat.Maximum = new decimal(new int[] { 6, 0, 0, 0 });
             EnduranceStat.Minimum = new decimal(new int[] { 4, 0, 0, int.MinValue });
             EnduranceStat.Name = "EnduranceStat";
@@ -350,7 +342,8 @@
             // 
             // CharismaStat
             // 
-            CharismaStat.Location = new Point(211, 70);
+            CharismaStat.Anchor = AnchorStyles.None;
+            CharismaStat.Location = new Point(210, 53);
             CharismaStat.Name = "CharismaStat";
             CharismaStat.Size = new Size(39, 22);
             CharismaStat.TabIndex = 22;
@@ -358,7 +351,8 @@
             // 
             // IntelligenceStat
             // 
-            IntelligenceStat.Location = new Point(269, 70);
+            IntelligenceStat.Anchor = AnchorStyles.None;
+            IntelligenceStat.Location = new Point(261, 53);
             IntelligenceStat.Name = "IntelligenceStat";
             IntelligenceStat.Size = new Size(39, 22);
             IntelligenceStat.TabIndex = 23;
@@ -366,7 +360,8 @@
             // 
             // AgilityStat
             // 
-            AgilityStat.Location = new Point(324, 70);
+            AgilityStat.Anchor = AnchorStyles.None;
+            AgilityStat.Location = new Point(312, 53);
             AgilityStat.Name = "AgilityStat";
             AgilityStat.Size = new Size(39, 22);
             AgilityStat.TabIndex = 24;
@@ -374,7 +369,8 @@
             // 
             // LuckStat
             // 
-            LuckStat.Location = new Point(380, 70);
+            LuckStat.Anchor = AnchorStyles.None;
+            LuckStat.Location = new Point(363, 53);
             LuckStat.Name = "LuckStat";
             LuckStat.Size = new Size(39, 22);
             LuckStat.TabIndex = 25;
@@ -666,6 +662,7 @@
             checkBoxSupplies1.Size = new Size(15, 14);
             checkBoxSupplies1.TabIndex = 75;
             checkBoxSupplies1.UseVisualStyleBackColor = true;
+            checkBoxSupplies1.CheckedChanged += checkBoxSupplies1_CheckedChanged_1;
             // 
             // checkBoxSupplies2
             // 
@@ -675,6 +672,7 @@
             checkBoxSupplies2.Size = new Size(15, 14);
             checkBoxSupplies2.TabIndex = 76;
             checkBoxSupplies2.UseVisualStyleBackColor = true;
+            checkBoxSupplies2.CheckedChanged += checkBoxSupplies2_CheckedChanged_1;
             // 
             // numericUpDownCaps
             // 
@@ -695,7 +693,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(labelMaxHP);
+            panel1.Controls.Add(label_max_hp);
             panel1.Controls.Add(labelFtUpdat);
             panel1.Controls.Add(tableLayoutPanel1);
             panel1.Controls.Add(label23);
@@ -717,6 +715,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(323, 761);
             panel1.TabIndex = 79;
+            // 
+            // label_max_hp
+            // 
+            label_max_hp.AutoSize = true;
+            label_max_hp.Location = new Point(112, 22);
+            label_max_hp.Name = "label_max_hp";
+            label_max_hp.Size = new Size(21, 14);
+            label_max_hp.TabIndex = 81;
+            label_max_hp.Text = "15";
             // 
             // labelFtUpdat
             // 
@@ -780,47 +787,16 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(tableLayoutPanel2);
             panel3.Controls.Add(label_Stat_Point_Numbers);
             panel3.Controls.Add(label25);
-            panel3.Controls.Add(label_L_Min);
-            panel3.Controls.Add(label_A_Min);
-            panel3.Controls.Add(label_I_Min);
-            panel3.Controls.Add(label_C_Min);
-            panel3.Controls.Add(label_E_Min);
-            panel3.Controls.Add(label_P_Min);
-            panel3.Controls.Add(label_S_Min);
-            panel3.Controls.Add(label_Min_Stat);
-            panel3.Controls.Add(label_Current_Stat);
-            panel3.Controls.Add(label_L_Max);
-            panel3.Controls.Add(label_A_Max);
-            panel3.Controls.Add(label_I_Max);
-            panel3.Controls.Add(label_C_Max);
-            panel3.Controls.Add(label_E_Max);
-            panel3.Controls.Add(label_P_Max);
-            panel3.Controls.Add(label_S_Max);
-            panel3.Controls.Add(label_MAX_Stat);
-            panel3.Controls.Add(label_L);
-            panel3.Controls.Add(label_A);
-            panel3.Controls.Add(label_I);
-            panel3.Controls.Add(label_C);
-            panel3.Controls.Add(label_E);
-            panel3.Controls.Add(label_P);
-            panel3.Controls.Add(label_S);
-            panel3.Controls.Add(splitContainer1);
             panel3.Controls.Add(comboBoxCoercion);
-            panel3.Controls.Add(IntelligenceStat);
-            panel3.Controls.Add(AgilityStat);
             panel3.Controls.Add(label15);
-            panel3.Controls.Add(CharismaStat);
-            panel3.Controls.Add(LuckStat);
             panel3.Controls.Add(comboBoxManipulation);
-            panel3.Controls.Add(EnduranceStat);
             panel3.Controls.Add(label9);
             panel3.Controls.Add(label16);
-            panel3.Controls.Add(PerceptionStat);
             panel3.Controls.Add(label10);
             panel3.Controls.Add(comboBoxSurvive);
-            panel3.Controls.Add(StrenghtStat);
             panel3.Controls.Add(comboBoxAthletics);
             panel3.Controls.Add(label17);
             panel3.Controls.Add(label11);
@@ -841,6 +817,298 @@
             panel3.Size = new Size(425, 761);
             panel3.TabIndex = 81;
             // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 8;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel2.Controls.Add(label_S, 1, 0);
+            tableLayoutPanel2.Controls.Add(label_P, 2, 0);
+            tableLayoutPanel2.Controls.Add(label_E, 3, 0);
+            tableLayoutPanel2.Controls.Add(label_L_Min, 7, 3);
+            tableLayoutPanel2.Controls.Add(label_C, 4, 0);
+            tableLayoutPanel2.Controls.Add(label_A_Min, 6, 3);
+            tableLayoutPanel2.Controls.Add(label_I, 5, 0);
+            tableLayoutPanel2.Controls.Add(label_I_Min, 5, 3);
+            tableLayoutPanel2.Controls.Add(label_A, 6, 0);
+            tableLayoutPanel2.Controls.Add(label_C_Min, 4, 3);
+            tableLayoutPanel2.Controls.Add(label_L, 7, 0);
+            tableLayoutPanel2.Controls.Add(label_E_Min, 3, 3);
+            tableLayoutPanel2.Controls.Add(label_MAX_Stat, 0, 1);
+            tableLayoutPanel2.Controls.Add(label_P_Min, 2, 3);
+            tableLayoutPanel2.Controls.Add(label_Current_Stat, 0, 2);
+            tableLayoutPanel2.Controls.Add(label_S_Min, 1, 3);
+            tableLayoutPanel2.Controls.Add(label_Min_Stat, 0, 3);
+            tableLayoutPanel2.Controls.Add(label_L_Max, 7, 1);
+            tableLayoutPanel2.Controls.Add(AgilityStat, 6, 2);
+            tableLayoutPanel2.Controls.Add(LuckStat, 7, 2);
+            tableLayoutPanel2.Controls.Add(IntelligenceStat, 5, 2);
+            tableLayoutPanel2.Controls.Add(label_S_Max, 1, 1);
+            tableLayoutPanel2.Controls.Add(label_A_Max, 6, 1);
+            tableLayoutPanel2.Controls.Add(label_P_Max, 2, 1);
+            tableLayoutPanel2.Controls.Add(CharismaStat, 4, 2);
+            tableLayoutPanel2.Controls.Add(label_I_Max, 5, 1);
+            tableLayoutPanel2.Controls.Add(label_E_Max, 3, 1);
+            tableLayoutPanel2.Controls.Add(label_C_Max, 4, 1);
+            tableLayoutPanel2.Controls.Add(EnduranceStat, 3, 2);
+            tableLayoutPanel2.Controls.Add(StrenghtStat, 1, 2);
+            tableLayoutPanel2.Controls.Add(PerceptionStat, 2, 2);
+            tableLayoutPanel2.Location = new Point(11, 22);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 4;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.Size = new Size(408, 100);
+            tableLayoutPanel2.TabIndex = 74;
+            // 
+            // label_S
+            // 
+            label_S.Anchor = AnchorStyles.None;
+            label_S.AutoSize = true;
+            label_S.Location = new Point(61, 5);
+            label_S.Name = "label_S";
+            label_S.Size = new Size(30, 14);
+            label_S.TabIndex = 48;
+            label_S.Text = "СИЛ";
+            // 
+            // label_P
+            // 
+            label_P.Anchor = AnchorStyles.None;
+            label_P.AutoSize = true;
+            label_P.Location = new Point(113, 5);
+            label_P.Name = "label_P";
+            label_P.Size = new Size(29, 14);
+            label_P.TabIndex = 49;
+            label_P.Text = "СПР";
+            // 
+            // label_E
+            // 
+            label_E.Anchor = AnchorStyles.None;
+            label_E.AutoSize = true;
+            label_E.Location = new Point(164, 5);
+            label_E.Name = "label_E";
+            label_E.Size = new Size(29, 14);
+            label_E.TabIndex = 50;
+            label_E.Text = "ВТР";
+            // 
+            // label_L_Min
+            // 
+            label_L_Min.Anchor = AnchorStyles.None;
+            label_L_Min.AutoSize = true;
+            label_L_Min.Location = new Point(375, 80);
+            label_L_Min.Name = "label_L_Min";
+            label_L_Min.Size = new Size(14, 14);
+            label_L_Min.TabIndex = 71;
+            label_L_Min.Text = "0";
+            // 
+            // label_C
+            // 
+            label_C.Anchor = AnchorStyles.None;
+            label_C.AutoSize = true;
+            label_C.Location = new Point(218, 5);
+            label_C.Name = "label_C";
+            label_C.Size = new Size(22, 14);
+            label_C.TabIndex = 51;
+            label_C.Text = "ПВ";
+            // 
+            // label_A_Min
+            // 
+            label_A_Min.Anchor = AnchorStyles.None;
+            label_A_Min.AutoSize = true;
+            label_A_Min.Location = new Point(324, 80);
+            label_A_Min.Name = "label_A_Min";
+            label_A_Min.Size = new Size(14, 14);
+            label_A_Min.TabIndex = 70;
+            label_A_Min.Text = "0";
+            // 
+            // label_I
+            // 
+            label_I.Anchor = AnchorStyles.None;
+            label_I.AutoSize = true;
+            label_I.Location = new Point(271, 5);
+            label_I.Name = "label_I";
+            label_I.Size = new Size(19, 14);
+            label_I.TabIndex = 52;
+            label_I.Text = "ІН";
+            // 
+            // label_I_Min
+            // 
+            label_I_Min.Anchor = AnchorStyles.None;
+            label_I_Min.AutoSize = true;
+            label_I_Min.Location = new Point(273, 80);
+            label_I_Min.Name = "label_I_Min";
+            label_I_Min.Size = new Size(14, 14);
+            label_I_Min.TabIndex = 69;
+            label_I_Min.Text = "0";
+            // 
+            // label_A
+            // 
+            label_A.Anchor = AnchorStyles.None;
+            label_A.AutoSize = true;
+            label_A.Location = new Point(320, 5);
+            label_A.Name = "label_A";
+            label_A.Size = new Size(22, 14);
+            label_A.TabIndex = 53;
+            label_A.Text = "ВП";
+            // 
+            // label_C_Min
+            // 
+            label_C_Min.Anchor = AnchorStyles.None;
+            label_C_Min.AutoSize = true;
+            label_C_Min.Location = new Point(222, 80);
+            label_C_Min.Name = "label_C_Min";
+            label_C_Min.Size = new Size(14, 14);
+            label_C_Min.TabIndex = 68;
+            label_C_Min.Text = "0";
+            // 
+            // label_L
+            // 
+            label_L.Anchor = AnchorStyles.None;
+            label_L.AutoSize = true;
+            label_L.Location = new Point(367, 5);
+            label_L.Name = "label_L";
+            label_L.Size = new Size(30, 14);
+            label_L.TabIndex = 54;
+            label_L.Text = "УДЧ";
+            // 
+            // label_E_Min
+            // 
+            label_E_Min.Anchor = AnchorStyles.None;
+            label_E_Min.AutoSize = true;
+            label_E_Min.Location = new Point(171, 80);
+            label_E_Min.Name = "label_E_Min";
+            label_E_Min.Size = new Size(14, 14);
+            label_E_Min.TabIndex = 67;
+            label_E_Min.Text = "0";
+            // 
+            // label_MAX_Stat
+            // 
+            label_MAX_Stat.Anchor = AnchorStyles.None;
+            label_MAX_Stat.AutoSize = true;
+            label_MAX_Stat.Location = new Point(10, 30);
+            label_MAX_Stat.Name = "label_MAX_Stat";
+            label_MAX_Stat.Size = new Size(31, 14);
+            label_MAX_Stat.TabIndex = 55;
+            label_MAX_Stat.Text = "MAX";
+            // 
+            // label_P_Min
+            // 
+            label_P_Min.Anchor = AnchorStyles.None;
+            label_P_Min.AutoSize = true;
+            label_P_Min.Location = new Point(120, 80);
+            label_P_Min.Name = "label_P_Min";
+            label_P_Min.Size = new Size(14, 14);
+            label_P_Min.TabIndex = 66;
+            label_P_Min.Text = "0";
+            // 
+            // label_Current_Stat
+            // 
+            label_Current_Stat.Anchor = AnchorStyles.None;
+            label_Current_Stat.AutoSize = true;
+            label_Current_Stat.Location = new Point(9, 55);
+            label_Current_Stat.Name = "label_Current_Stat";
+            label_Current_Stat.Size = new Size(32, 14);
+            label_Current_Stat.TabIndex = 63;
+            label_Current_Stat.Text = "Пот.";
+            // 
+            // label_S_Min
+            // 
+            label_S_Min.Anchor = AnchorStyles.None;
+            label_S_Min.AutoSize = true;
+            label_S_Min.Location = new Point(69, 80);
+            label_S_Min.Name = "label_S_Min";
+            label_S_Min.Size = new Size(14, 14);
+            label_S_Min.TabIndex = 65;
+            label_S_Min.Text = "0";
+            // 
+            // label_Min_Stat
+            // 
+            label_Min_Stat.Anchor = AnchorStyles.None;
+            label_Min_Stat.AutoSize = true;
+            label_Min_Stat.Location = new Point(11, 80);
+            label_Min_Stat.Name = "label_Min_Stat";
+            label_Min_Stat.Size = new Size(28, 14);
+            label_Min_Stat.TabIndex = 64;
+            label_Min_Stat.Text = "MIN";
+            // 
+            // label_L_Max
+            // 
+            label_L_Max.Anchor = AnchorStyles.None;
+            label_L_Max.AutoSize = true;
+            label_L_Max.Location = new Point(375, 30);
+            label_L_Max.Name = "label_L_Max";
+            label_L_Max.Size = new Size(14, 14);
+            label_L_Max.TabIndex = 62;
+            label_L_Max.Text = "0";
+            // 
+            // label_S_Max
+            // 
+            label_S_Max.Anchor = AnchorStyles.None;
+            label_S_Max.AutoSize = true;
+            label_S_Max.Location = new Point(69, 30);
+            label_S_Max.Name = "label_S_Max";
+            label_S_Max.Size = new Size(14, 14);
+            label_S_Max.TabIndex = 56;
+            label_S_Max.Text = "0";
+            // 
+            // label_A_Max
+            // 
+            label_A_Max.Anchor = AnchorStyles.None;
+            label_A_Max.AutoSize = true;
+            label_A_Max.Location = new Point(324, 30);
+            label_A_Max.Name = "label_A_Max";
+            label_A_Max.Size = new Size(14, 14);
+            label_A_Max.TabIndex = 61;
+            label_A_Max.Text = "0";
+            // 
+            // label_P_Max
+            // 
+            label_P_Max.Anchor = AnchorStyles.None;
+            label_P_Max.AutoSize = true;
+            label_P_Max.Location = new Point(120, 30);
+            label_P_Max.Name = "label_P_Max";
+            label_P_Max.Size = new Size(14, 14);
+            label_P_Max.TabIndex = 57;
+            label_P_Max.Text = "0";
+            // 
+            // label_I_Max
+            // 
+            label_I_Max.Anchor = AnchorStyles.None;
+            label_I_Max.AutoSize = true;
+            label_I_Max.Location = new Point(273, 30);
+            label_I_Max.Name = "label_I_Max";
+            label_I_Max.Size = new Size(14, 14);
+            label_I_Max.TabIndex = 60;
+            label_I_Max.Text = "0";
+            // 
+            // label_E_Max
+            // 
+            label_E_Max.Anchor = AnchorStyles.None;
+            label_E_Max.AutoSize = true;
+            label_E_Max.Location = new Point(171, 30);
+            label_E_Max.Name = "label_E_Max";
+            label_E_Max.Size = new Size(14, 14);
+            label_E_Max.TabIndex = 58;
+            label_E_Max.Text = "0";
+            // 
+            // label_C_Max
+            // 
+            label_C_Max.Anchor = AnchorStyles.None;
+            label_C_Max.AutoSize = true;
+            label_C_Max.Location = new Point(222, 30);
+            label_C_Max.Name = "label_C_Max";
+            label_C_Max.Size = new Size(14, 14);
+            label_C_Max.TabIndex = 59;
+            label_C_Max.Text = "0";
+            // 
             // label_Stat_Point_Numbers
             // 
             label_Stat_Point_Numbers.AutoSize = true;
@@ -859,230 +1127,6 @@
             label25.Size = new Size(124, 14);
             label25.TabIndex = 72;
             label25.Text = "Очки для розподілу:";
-            // 
-            // label_L_Min
-            // 
-            label_L_Min.AutoSize = true;
-            label_L_Min.Location = new Point(389, 104);
-            label_L_Min.Name = "label_L_Min";
-            label_L_Min.Size = new Size(14, 14);
-            label_L_Min.TabIndex = 71;
-            label_L_Min.Text = "0";
-            // 
-            // label_A_Min
-            // 
-            label_A_Min.AutoSize = true;
-            label_A_Min.Location = new Point(333, 104);
-            label_A_Min.Name = "label_A_Min";
-            label_A_Min.Size = new Size(14, 14);
-            label_A_Min.TabIndex = 70;
-            label_A_Min.Text = "0";
-            // 
-            // label_I_Min
-            // 
-            label_I_Min.AutoSize = true;
-            label_I_Min.Location = new Point(278, 104);
-            label_I_Min.Name = "label_I_Min";
-            label_I_Min.Size = new Size(14, 14);
-            label_I_Min.TabIndex = 69;
-            label_I_Min.Text = "0";
-            // 
-            // label_C_Min
-            // 
-            label_C_Min.AutoSize = true;
-            label_C_Min.Location = new Point(220, 104);
-            label_C_Min.Name = "label_C_Min";
-            label_C_Min.Size = new Size(14, 14);
-            label_C_Min.TabIndex = 68;
-            label_C_Min.Text = "0";
-            // 
-            // label_E_Min
-            // 
-            label_E_Min.AutoSize = true;
-            label_E_Min.Location = new Point(166, 104);
-            label_E_Min.Name = "label_E_Min";
-            label_E_Min.Size = new Size(14, 14);
-            label_E_Min.TabIndex = 67;
-            label_E_Min.Text = "0";
-            // 
-            // label_P_Min
-            // 
-            label_P_Min.AutoSize = true;
-            label_P_Min.Location = new Point(110, 104);
-            label_P_Min.Name = "label_P_Min";
-            label_P_Min.Size = new Size(14, 14);
-            label_P_Min.TabIndex = 66;
-            label_P_Min.Text = "0";
-            // 
-            // label_S_Min
-            // 
-            label_S_Min.AutoSize = true;
-            label_S_Min.Location = new Point(56, 104);
-            label_S_Min.Name = "label_S_Min";
-            label_S_Min.Size = new Size(14, 14);
-            label_S_Min.TabIndex = 65;
-            label_S_Min.Text = "0";
-            // 
-            // label_Min_Stat
-            // 
-            label_Min_Stat.AutoSize = true;
-            label_Min_Stat.Location = new Point(7, 104);
-            label_Min_Stat.Name = "label_Min_Stat";
-            label_Min_Stat.Size = new Size(28, 14);
-            label_Min_Stat.TabIndex = 64;
-            label_Min_Stat.Text = "MIN";
-            // 
-            // label_Current_Stat
-            // 
-            label_Current_Stat.AutoSize = true;
-            label_Current_Stat.Location = new Point(6, 72);
-            label_Current_Stat.Name = "label_Current_Stat";
-            label_Current_Stat.Size = new Size(32, 14);
-            label_Current_Stat.TabIndex = 63;
-            label_Current_Stat.Text = "Пот.";
-            // 
-            // label_L_Max
-            // 
-            label_L_Max.AutoSize = true;
-            label_L_Max.Location = new Point(389, 46);
-            label_L_Max.Name = "label_L_Max";
-            label_L_Max.Size = new Size(14, 14);
-            label_L_Max.TabIndex = 62;
-            label_L_Max.Text = "0";
-            // 
-            // label_A_Max
-            // 
-            label_A_Max.AutoSize = true;
-            label_A_Max.Location = new Point(333, 46);
-            label_A_Max.Name = "label_A_Max";
-            label_A_Max.Size = new Size(14, 14);
-            label_A_Max.TabIndex = 61;
-            label_A_Max.Text = "0";
-            // 
-            // label_I_Max
-            // 
-            label_I_Max.AutoSize = true;
-            label_I_Max.Location = new Point(278, 46);
-            label_I_Max.Name = "label_I_Max";
-            label_I_Max.Size = new Size(14, 14);
-            label_I_Max.TabIndex = 60;
-            label_I_Max.Text = "0";
-            // 
-            // label_C_Max
-            // 
-            label_C_Max.AutoSize = true;
-            label_C_Max.Location = new Point(220, 46);
-            label_C_Max.Name = "label_C_Max";
-            label_C_Max.Size = new Size(14, 14);
-            label_C_Max.TabIndex = 59;
-            label_C_Max.Text = "0";
-            // 
-            // label_E_Max
-            // 
-            label_E_Max.AutoSize = true;
-            label_E_Max.Location = new Point(166, 46);
-            label_E_Max.Name = "label_E_Max";
-            label_E_Max.Size = new Size(14, 14);
-            label_E_Max.TabIndex = 58;
-            label_E_Max.Text = "0";
-            // 
-            // label_P_Max
-            // 
-            label_P_Max.AutoSize = true;
-            label_P_Max.Location = new Point(110, 46);
-            label_P_Max.Name = "label_P_Max";
-            label_P_Max.Size = new Size(14, 14);
-            label_P_Max.TabIndex = 57;
-            label_P_Max.Text = "0";
-            // 
-            // label_S_Max
-            // 
-            label_S_Max.AutoSize = true;
-            label_S_Max.Location = new Point(56, 46);
-            label_S_Max.Name = "label_S_Max";
-            label_S_Max.Size = new Size(14, 14);
-            label_S_Max.TabIndex = 56;
-            label_S_Max.Text = "0";
-            // 
-            // label_MAX_Stat
-            // 
-            label_MAX_Stat.AutoSize = true;
-            label_MAX_Stat.Location = new Point(6, 48);
-            label_MAX_Stat.Name = "label_MAX_Stat";
-            label_MAX_Stat.Size = new Size(31, 14);
-            label_MAX_Stat.TabIndex = 55;
-            label_MAX_Stat.Text = "MAX";
-            // 
-            // label_L
-            // 
-            label_L.AutoSize = true;
-            label_L.Location = new Point(380, 9);
-            label_L.Name = "label_L";
-            label_L.Size = new Size(30, 14);
-            label_L.TabIndex = 54;
-            label_L.Text = "УДЧ";
-            // 
-            // label_A
-            // 
-            label_A.AutoSize = true;
-            label_A.Location = new Point(324, 9);
-            label_A.Name = "label_A";
-            label_A.Size = new Size(22, 14);
-            label_A.TabIndex = 53;
-            label_A.Text = "ВП";
-            // 
-            // label_I
-            // 
-            label_I.AutoSize = true;
-            label_I.Location = new Point(269, 9);
-            label_I.Name = "label_I";
-            label_I.Size = new Size(19, 14);
-            label_I.TabIndex = 52;
-            label_I.Text = "ІН";
-            // 
-            // label_C
-            // 
-            label_C.AutoSize = true;
-            label_C.Location = new Point(211, 9);
-            label_C.Name = "label_C";
-            label_C.Size = new Size(22, 14);
-            label_C.TabIndex = 51;
-            label_C.Text = "ПВ";
-            // 
-            // label_E
-            // 
-            label_E.AutoSize = true;
-            label_E.Location = new Point(157, 9);
-            label_E.Name = "label_E";
-            label_E.Size = new Size(29, 14);
-            label_E.TabIndex = 50;
-            label_E.Text = "ВТР";
-            // 
-            // label_P
-            // 
-            label_P.AutoSize = true;
-            label_P.Location = new Point(101, 9);
-            label_P.Name = "label_P";
-            label_P.Size = new Size(29, 14);
-            label_P.TabIndex = 49;
-            label_P.Text = "СПР";
-            // 
-            // label_S
-            // 
-            label_S.AutoSize = true;
-            label_S.Location = new Point(47, 9);
-            label_S.Name = "label_S";
-            label_S.Size = new Size(30, 14);
-            label_S.TabIndex = 48;
-            label_S.Text = "СИЛ";
-            // 
-            // splitContainer1
-            // 
-            splitContainer1.Location = new Point(20, 457);
-            splitContainer1.Name = "splitContainer1";
-            splitContainer1.Size = new Size(399, 28);
-            splitContainer1.SplitterDistance = 133;
-            splitContainer1.TabIndex = 47;
             // 
             // Form1
             // 
@@ -1118,8 +1162,8 @@
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
-            splitContainer1.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1188,11 +1232,9 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private SplitContainer splitContainer1;
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox textBox1;
         private Label labelFtUpdat;
-        private Label labelMaxHP;
         private Label label_S;
         private Label label_I;
         private Label label_C;
@@ -1219,5 +1261,7 @@
         private Label label_Min_Stat;
         private Label label_Stat_Point_Numbers;
         private Label label25;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Label label_max_hp;
     }
 }

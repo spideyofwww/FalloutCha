@@ -75,15 +75,13 @@ namespace FalloutCha
             MainCh.skills["Coercion"] = comboBoxCoercion.Text;
             // ОЗ і інші ресурси
 
-            MainCh.Hp_max = Convert.ToUInt16(labelMaxHP.Text);
+            MainCh.Hp_max = Convert.ToUInt16(label_max_hp.Text);
             MainCh.Hp = (ushort)numericUpDownHP.Value;
             MainCh.Armor = (ushort)numericUpDownArmor.Value;
             MainCh.supplies[0] = checkBoxSupplies0.Checked;
             MainCh.supplies[1] = checkBoxSupplies1.Checked;
             MainCh.supplies[2] = checkBoxSupplies2.Checked;
             MainCh.Caps = (ushort)numericUpDownCaps.Value;
-            //MainCh.FT_have = (int)numericUpDownFT.Value;
-            //MainCh.FT_Update = (int)numericUpDownFtUpdate.Value;
 
             //Зберігаємо у json
             string pathName;
@@ -99,7 +97,7 @@ namespace FalloutCha
             }
             else
             {
-                //MessageBox.Show("помилка", "фаіл не створено", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("помилка", "фаіл не створено", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -141,7 +139,7 @@ namespace FalloutCha
             label_Stat_Point_Numbers.Text = "3";
             MainCh.MaxHPCount();
             numericUpDownHP.Maximum = MainCh.Hp_max;
-            labelMaxHP.Text = Convert.ToString(MainCh.Hp_max);
+            label_max_hp.Text = Convert.ToString(MainCh.Hp_max);
             MainCh.StatMaxMin();
 
             for (int i = 0; i < stats.Length; i++)
@@ -283,7 +281,7 @@ namespace FalloutCha
             comboBoxManipulation.Text = MainCh.skills["Manipulation"];
             comboBoxCoercion.Text = MainCh.skills["Coercion"];
             // ОЗ і інші ресурси
-            labelMaxHP.Text = Convert.ToString(MainCh.Hp_max);
+            label_max_hp.Text = Convert.ToString(MainCh.Hp_max);
             numericUpDownHP.Value = MainCh.Hp;
             numericUpDownArmor.Value = MainCh.Armor;
             checkBoxSupplies0.Checked = MainCh.supplies[0];
@@ -352,7 +350,7 @@ namespace FalloutCha
             MainCh.skills["Coercion"] = comboBoxCoercion.Text;
             // ОЗ і інші ресурси
 
-            MainCh.Hp_max = Convert.ToUInt16(labelMaxHP.Text);
+            MainCh.Hp_max = Convert.ToUInt16(label_max_hp.Text);
             MainCh.Hp = (ushort)numericUpDownHP.Value;
             MainCh.Armor = (ushort)numericUpDownArmor.Value;
             MainCh.supplies[0] = checkBoxSupplies0.Checked;
@@ -414,7 +412,7 @@ namespace FalloutCha
             GetStat("E", EnduranceStat);
             MainCh.MaxHPCount();
             numericUpDownHP.Maximum = MainCh.Hp_max;
-            labelMaxHP.Text = Convert.ToString(MainCh.Hp_max);
+            label_max_hp.Text = Convert.ToString(MainCh.Hp_max);
         }
 
         private void StrenghtStat_ValueChanged(object sender, EventArgs e)
@@ -440,6 +438,32 @@ namespace FalloutCha
         private void AgilityStat_ValueChanged(object sender, EventArgs e)
         {
             GetStat("A", AgilityStat);
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void checkBoxSupplies2_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (checkBoxSupplies2.Checked)
+            {
+                checkBoxSupplies0.Checked = true;
+                checkBoxSupplies1.Checked = true;
+            }
+        }
+
+        private void checkBoxSupplies1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (!checkBoxSupplies1.Checked)
+            {
+                checkBoxSupplies2.Checked = false;
+            }
+            else
+            {
+                checkBoxSupplies0.Checked = true;
+            }
         }
     }
 }
